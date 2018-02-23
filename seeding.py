@@ -2,7 +2,7 @@ import sqlite3
 import time
 import random
 
-today = int(time.time()/86400)
+today = int(time.time()/86400) + 1
 
 def nCr(n,r):
     if n < r:
@@ -12,8 +12,7 @@ def nCr(n,r):
     f = 1
     for i in range(r):
         f *= n-i
-    for i in range(r):
-        f /= i+1
+        f //= i+1
     return f
 
 def permutations(iterable, r=None):
@@ -50,23 +49,17 @@ def get_names(db):
     return {p['id']: p['surname'] if sum([1 for t in pl if t['surname']==p['surname']])<=1 else p['name'][0]+'.'+p['surname'] for p in pl}
 
 def get_ratings(db, day = None):
-    condition = '' if day is None else ' WHERE rat_date<%d '%day
     res = db.execute('''
-        WITH latest(p,d) AS (
-        SELECT rat_pla_autoid, MAX(rat_date)
-        FROM snk_rating
-        %s
-        GROUP BY rat_pla_autoid
-        )
-        SELECT p AS player, rat_rating AS rating, rat_deviation AS deviation, d AS day
-        FROM snk_rating 
-        JOIN latest ON rat_pla_autoid=p AND rat_date=d
+        SELECT rat_pla_autoid AS player, rat_rating AS rating, rat_deviation AS deviation, 
+        rat_date AS day, rat_official AS official, rat_pre_rating
+        FROM snk_ratings
+        WHERE rat_day=%d
         ORDER BY rating DESC
-        '''%condition).fetchall()
+        '''%(today if day is None else day)).fetchall()
     res = { r['player']: {k: r[k] for k in r if k!='player'} for r in res }
     for p in get_names(db):
         if p not in res:
-            res[p] = {'rating': 1500 + random.uniform(-0.1,0.1), 'deviation': 350, 'day': 0}
+            res[p] = {'rating': 1500 + random.uniform(-0.1,0.1), 'deviation': 350, 'day': 0, 'official': 0}
     return res
 
 def frame_prediction(db, pl1, pl2):
@@ -105,7 +98,7 @@ def distribution_map(r, reverse = True):
         for i in range(2**g):
             nres.append( res[i] )
             if reverse:
-                op = 2**(g+1) - i - 1
+                op = 2**(g+1) - res[i] - 1
             else:
                 op = 2**g + i
             nres.append(op)
@@ -123,13 +116,14 @@ db.row_factory = dict_factory
 r = 4
 dmap = distribution_map(r, reverse = True)
 rat = get_ratings(db, day = None)
-players = [p for p in sorted(rat, key = lambda p: -rat[p]['rating']) if rat[p]['day']>today-140][:2**r]
+players = [p for p in sorted(rat, key = lambda p: -rat[p]['rating']) if rat[p]['official'] > 0 and rat[p]['day']>today-150][:2**r]
 
 #players = [20042, 20002, 20049, 20022, 20008, 20012, 20004, 20050, 20003, 20048, 20009, 20014, 20046, 20039, 20010, 20016]
 #players = list(sorted(players, key = lambda p: -rat[p]['rating']))
 
 avail = { p: [1]*7 for p in players }
-'''for p in avail:
+'''
+for p in avail:
     avail[p] = [1,1,random.randint(0,1),0,0,0,0]
     random.shuffle(avail[p])
 avail[20009] = [0,0,0,0,1,1,0] #Minuto
@@ -140,8 +134,8 @@ avail[20002] = [0,1,0,1,0,1,1] #Calzerano
 avail[20003] = [1,1,1,1,1,0,1] #Picchi
 avail[20033] = [0,0,0,1,1,0,0] #Sichi
 avail[20044] = [1,1,1,1,1,1,1] #Besenval
-avail[20045] = [1,1,1,1,1,1,1] #Solomko'''
-
+avail[20045] = [1,1,1,1,1,1,1] #Solomko
+'''
 ran = {players[i]: i+1 for i in range(len(players))}
        
 prob = {}
@@ -173,8 +167,8 @@ for g2 in permutations(groups[2]):
         success = False
         count = 0
         while count < 1000 or (not success and count < 1000):
-            for g in range(4,r+1):
-                random.shuffle(groups[g])
+            #for g in range(4,r+1):
+            #    random.shuffle(groups[g])
             perm = distribute(flatten([g0,g1,g2,g3]+groups[4:]))
             
             ptree = {i+2**r: {perm[i]: 1} for i in range(2**r)}
@@ -200,9 +194,9 @@ for g2 in permutations(groups[2]):
                 for p1 in ptree[i1]:
                     ptree[i][p1] = ptree[i1][p1] * sum([ptree[i0][p0] * prob[p1][p0] for p0 in ptree[i0]])
             
-            c = int(pres * min(ctree.values())) / pres
+            c = round(pres * min(ctree.values())) / pres
             b = sum(btree.values())
-            f = sum(ftree.values()) * min(ftree.values())
+            f = round(sum(ftree.values()) * min(ftree.values()))
             
             if max_comp is None or (c, f) > (max_comp, max_flex):
                 print(c, f)
