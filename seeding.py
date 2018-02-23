@@ -49,7 +49,7 @@ def get_names(db):
     pl = db.execute('SELECT pla_autoid AS id, snk_player.pla_name AS name, snk_player.pla_surname AS surname FROM snk_player').fetchall()
     return {p['id']: p['surname'] if sum([1 for t in pl if t['surname']==p['surname']])<=1 else p['name'][0]+'.'+p['surname'] for p in pl}
 
-def get_ratings(db, day = None):
+def get_ratings(db, day = None, average = False):
     condition = '' if day is None else ' WHERE rat_date<%d '%day
     res = db.execute('''
         WITH latest(p,d) AS (
@@ -58,7 +58,8 @@ def get_ratings(db, day = None):
         %s
         GROUP BY rat_pla_autoid
         )
-        SELECT p AS player, rat_rating AS rating, rat_deviation AS deviation, d AS day
+        SELECT p AS player, rat_rating AS rating, rat_deviation AS deviation, d AS day,
+        CASE WHEN rat_date>=d-90 THEN rat_official ELSE 0 END AS official
         FROM snk_rating 
         JOIN latest ON rat_pla_autoid=p AND rat_date=d
         ORDER BY rating DESC
@@ -66,7 +67,8 @@ def get_ratings(db, day = None):
     res = { r['player']: {k: r[k] for k in r if k!='player'} for r in res }
     for p in get_names(db):
         if p not in res:
-            res[p] = {'rating': 1500 + random.uniform(-0.1,0.1), 'deviation': 350, 'day': 0}
+            res[p] = {'rating': 1500 + random.uniform(-0.1,0.1), 'deviation': 350, 'day': 0, 'official': 0}
+    res[0] = {'rating': 0, 'deviation': 0, 'day': today, 'official': 0}
     return res
 
 def frame_prediction(db, pl1, pl2):
@@ -105,7 +107,7 @@ def distribution_map(r, reverse = True):
         for i in range(2**g):
             nres.append( res[i] )
             if reverse:
-                op = 2**(g+1) - i - 1
+                op = 2**(g+1) - res[i] - 1
             else:
                 op = 2**g + i
             nres.append(op)
@@ -120,18 +122,24 @@ conn = sqlite3.connect('tuscany.snkcoresvr.sqlite')
 db = conn.cursor()
 db.row_factory = dict_factory
 
-r = 4
-dmap = distribution_map(r, reverse = True)
 rat = get_ratings(db, day = None)
-players = [p for p in sorted(rat, key = lambda p: -rat[p]['rating']) if rat[p]['day']>today-140][:2**r]
+players = [p for p in sorted(rat, key = lambda p: -rat[p]['rating']) if rat[p]['day']>today-20][:21]
+
+r = min([r for r in range(6) if len(players) <= 2**r])
+dmap = distribution_map(r, reverse = True)
+
+if len(players) < 2**r:
+    players += [0] * (2**r - len(players))
 
 #players = [20042, 20002, 20049, 20022, 20008, 20012, 20004, 20050, 20003, 20048, 20009, 20014, 20046, 20039, 20010, 20016]
-#players = list(sorted(players, key = lambda p: -rat[p]['rating']))
+players = list(sorted(players, key = lambda p: -rat[p]['rating'] - 2000*rat[p]['official']))
 
 avail = { p: [1]*7 for p in players }
-'''for p in avail:
-    avail[p] = [1,1,random.randint(0,1),0,0,0,0]
-    random.shuffle(avail[p])
+
+for p in avail:
+    if p != 0:
+        avail[p] = [1,1,random.randint(0,1),1,0,0,0]
+        random.shuffle(avail[p])
 avail[20009] = [0,0,0,0,1,1,0] #Minuto
 avail[20012] = [0,0,0,0,1,1,1] #F. Pasqualetti
 avail[20014] = [0,0,0,1,0,0,1] #Cordova
@@ -140,14 +148,14 @@ avail[20002] = [0,1,0,1,0,1,1] #Calzerano
 avail[20003] = [1,1,1,1,1,0,1] #Picchi
 avail[20033] = [0,0,0,1,1,0,0] #Sichi
 avail[20044] = [1,1,1,1,1,1,1] #Besenval
-avail[20045] = [1,1,1,1,1,1,1] #Solomko'''
+avail[20045] = [1,1,1,1,1,1,1] #Solomko
 
 ran = {players[i]: i+1 for i in range(len(players))}
        
 prob = {}
 comp = {}
 flex = {}
-w = 0
+w = 0.2
 for p1 in players:
     prob[p1] = {}
     comp[p1] = {}
@@ -161,6 +169,9 @@ for p1 in players:
 groups = [[players[0]]]
 for g in range(r):
     groups.append( players[2**g:2**(g+1)] )
+zeros = len([p for p in groups[-1] if p == 0])
+groups[-1] = [p for p in groups[-1] if p != 0]
+groups.append([0] * zeros)
 
 max_comp = None
 max_b = 0
@@ -172,10 +183,20 @@ for g2 in permutations(groups[2]):
     for g3 in permutations(groups[3]):
         success = False
         count = 0
-        while count < 1000 or (not success and count < 1000):
-            for g in range(4,r+1):
-                random.shuffle(groups[g])
-            perm = distribute(flatten([g0,g1,g2,g3]+groups[4:]))
+        while count < 100 or (not success and count < 1000):
+            if count > 0:
+                for g in range(4,r+1):
+                    random.shuffle(groups[g])
+            
+            flat = flatten([g0,g1,g2,g3]+groups[4:r]) + [0] * 2**(r-1)
+            nqual = len(groups[r])
+            j = 0
+            for i in range(2**(r-1)):
+                if ran[flat[i]] > 2**(r-1) - nqual:
+                    flat[2**r-i-1] = groups[r][j]
+                    j += 1
+            
+            perm = distribute(flat)
             
             ptree = {i+2**r: {perm[i]: 1} for i in range(2**r)}
             ctree = {}
@@ -200,9 +221,9 @@ for g2 in permutations(groups[2]):
                 for p1 in ptree[i1]:
                     ptree[i][p1] = ptree[i1][p1] * sum([ptree[i0][p0] * prob[p1][p0] for p0 in ptree[i0]])
             
-            c = int(pres * min(ctree.values())) / pres
+            c = round(pres * min(ctree.values())) / pres
             b = sum(btree.values())
-            f = sum(ftree.values()) * min(ftree.values())
+            f = round( sum(ftree.values()) * min(ftree.values()) )
             
             if max_comp is None or (c, f) > (max_comp, max_flex):
                 print(c, f)
@@ -221,13 +242,17 @@ for g2 in permutations(groups[2]):
 name = get_names(db)
 print()
 for p in players:
-    print('%-13s'%name[p], ' '.join([str(a) for a in avail[p]]))
+    if p != 0:
+        print('%2d %-13s'%(ran[p], name.get(p,'')), ' '.join([str(a) for a in avail[p]]), ' %6.2f'%(1/max(1/500,opt_ptree[1][p])))
 
 n = 1
 print()
 for p in opt_perm:
     #print('%d %s'%(ran[p], name[p]))
-    print('%2d %-13s %5.2f%%'%(ran[p], name[p], opt_ptree[1][p]*100))
+    if p != 0:
+        print('%2d %-13s %5.2f%%'%(ran[p], name.get(p,''), 100*opt_ptree[1][p]))
+    else:
+        print('--')
     n = 1-n
     if n: print('\t\t\t')
     
