@@ -68,6 +68,12 @@ def frame_prediction(db, pl1, pl2):
     r = get_ratings(db)
     r1 = r[pl1]
     r2 = r[pl2]
+
+    if r1['rating'] == 0:
+        return 0
+    elif r2['rating'] == 0:
+        return 1
+        
     RD1 = min( r1['deviation']**2 + c * (today - r1['day']), 350**2 )
     RD2 = min( r2['deviation']**2 + c * (today - r2['day']), 350**2 )
     g = 1 / (1 + 3 * q**2 * (RD1 + RD2) / pi**2)**0.5
@@ -113,7 +119,7 @@ db = conn.cursor()
 db.row_factory = dict_factory
 
 rat = get_ratings(db, day = None)
-players = [p for p in sorted(rat, key = lambda p: -rat[p]['rating']) if rat[p]['day']>today-20][:21]
+players = [p for p in sorted(rat, key = lambda p: -rat[p]['rating']) if rat[p]['day']>today-20][:11]
 
 r = min([r for r in range(6) if len(players) <= 2**r])
 dmap = distribution_map(r, reverse = True)
@@ -125,7 +131,7 @@ if len(players) < 2**r:
 players = list(sorted(players, key = lambda p: -rat[p]['rating'] - 2000*rat[p]['official']))
 
 avail = { p: [1]*7 for p in players }
-
+'''
 for p in avail:
     if p != 0:
         avail[p] = [1,1,random.randint(0,1),1,0,0,0]
@@ -139,7 +145,7 @@ avail[20003] = [1,1,1,1,1,0,1] #Picchi
 avail[20033] = [0,0,0,1,1,0,0] #Sichi
 avail[20044] = [1,1,1,1,1,1,1] #Besenval
 avail[20045] = [1,1,1,1,1,1,1] #Solomko
-
+'''
 ran = {players[i]: i+1 for i in range(len(players))}
        
 prob = {}
@@ -151,7 +157,8 @@ for p1 in players:
     comp[p1] = {}
     flex[p1] = {}
     for p2 in players:
-        prob[p1][p2] = w * 0.5 + (1-w) * match_prediction(db, p1, p2, 2)
+        pred = match_prediction(db, p1, p2, 2)
+        prob[p1][p2] = w * 0.5 + (1-w) * pred if pred not in [0,1] else pred
         comp[p1][p2] = compatibility(avail[p1], avail[p2])
         flex[p1][p2] = flexibility(avail[p1], avail[p2])
         #if comp[p1][p2]==0: print(p1, p2)
@@ -245,5 +252,14 @@ for p in opt_perm:
         print('--')
     n = 1-n
     if n: print('\t\t\t')
+
+for i in range(1, 2**(r+1)):
+    stage = max([g for g in range(r+1) if i%(2**g)==0])
+    start = (i-2**stage) // 2
+    end = start + 2**stage
+    p = sorted(opt_perm[start : end], key = lambda p: ran[p])[0]
     
+    if stage!=0 or 0 not in opt_perm[start//2*2 : start//2*2 + 2]:
+        print('%s%2d %-13s'%(' '*((25-stage)*stage), ran[p], name.get(p,'')))
+
 conn.close()
