@@ -10,6 +10,8 @@ Like glicko, the introduced rating system considers each player's strength being
 * players try to win every frame,
 * frames outcomes are independent of each other.
 
+Factors other that count of frames won or lost between two opponents, such as match outcome, points scored, breaks made etc, are not taken into account.
+
 ## Description
 
 Ratings are updated daily. Ratings on a given day are based on all finished ranked games played before that day between members of one academy (excluding "guest" players, who are not ranked).
