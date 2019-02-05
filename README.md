@@ -116,14 +116,24 @@ AndyScorer website provides detailed rating reports.
 
 #### I have won the match. Why has my rating dropped?**
 
-Changes in ratings depend not on a match outcome, but on the score (3-0 and 3-2 will result in different changes), as well as on the players ratings prior to the game. If both opponents had equal ratings before the game, then indeed winning with any score would mean gaining some rating points and vise versa. However, if a player with lover rating wins more frames than "expected" against a strong opponent, than he will still get rating points, while the winner will loose some.
-Imagine your rating is 100, and Ronnie O'Sullivan's rating is 3000, and you loose 10-9. Then the system will conclude that maybe you are not so bad and he is not so good, and adjust your ratings accordingly.
+Changes in ratings depend on the score (3-0 and 3-2 will result in different changes), as well as on the players ratings prior to the game. 
+Imagine your rating is 100, and Ronnie O'Sullivan's rating is 3000, and you loose 10-9. Then the system will conclude that probably you are not so bad and he is not so good, and adjust the ratings accordingly.
+You are guaranteed to get raning points only if you:
+* whitewash your opponent, or
+* win (with any score) against a stronger opponent.
+Otherwice make sure that you don't loose too many frames.
 
-Seriously speaking, the system does not see such thing as a match at all, it only cares about frames. So playing two matches 2-1 or one 4-2 will have exactly the same effect, as long as these matches are of the same type (minor or major).
+#### Will I get rating points for winning a match?
+
+No, the system does not see such a thing as match at all, it only cares about frames.
+The number of rating points you get depends on the frames scored, not a match result.
+Basically, playing two matches 2-1 or one 4-2 will have exactly the same effect, as long as these matches are of the same type (minor or major).
 
 #### When will I get an official rating?
 
-
+When reliability of your rating becomes positive.
+It usually takes about 20 frames to play with 5 different opponents, but precise number depents on the "quality" of you opponents, as well as some other factors.
+Keep playing and you get your official status soon.
 
 #### What happens to my rating if I don't play for some time?
 
@@ -131,4 +141,4 @@ Rating value itself will not change, but reliability will go down until eventual
 In that case you will need to play some number of games before appearing at the official ranking again.
 
 ## Credits
-The rating system was inspired by Gerardo Calzerano, designed by Anton Solomko and implemented by Anton Solomko and Luca Gherardi.
+The rating system was inspired by *Gerardo Calzerano*, designed by *Anton Solomko* and implemented by *Anton Solomko* and *Luca Gherardi*.
