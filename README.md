@@ -1,1 +1,2 @@
-http://snooker.andyscorer.org/snooker/tuscany/
+Andy Rating System
+===
