@@ -123,7 +123,7 @@ with the following columns:
 * Rating *reliability*.
 
 Only official ratings are shown by default.
-Set the corresponding flag to see all ratings including unofficial:
+Set the corresponding flag to see all ratings including unofficial ones:
 ![alt text](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/snk_rating_1549395796.jpg?38962)
 
 ### Official ranking
