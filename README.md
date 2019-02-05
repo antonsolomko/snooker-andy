@@ -28,7 +28,7 @@ Varies from -1 (default for a new players) to 1.
 The higher the reliability, the more accurate the rating is considered to be. 
 Reliability 1 would mean that the system is 100% sure in player's strength, although this level of confidence can never be achieved.
 
-Both values (rating and reliability) are updated daily based on all finished ranked games played the day before and between members of a club (excluding "guest" players, who are not ranked).
+Both values (rating and reliability) are updated daily based on all finished ranked games played the day before between members of a given club (excluding "guest" players, who are not ranked).
 The system looks at all ranked games played at a given day, estimates an expected outcome of each frame and then simultaniously adjusts players ratings according to the difference between actual results and the expectations.
 
 Reliability for a given player grows whenever he plays ranked games (the value by which it is increased is not fixed and depends on many factors, firstly opponent's rating and reliability), and decreases with the passage of time (by approximately -0.0083 every day) if he does not play.
