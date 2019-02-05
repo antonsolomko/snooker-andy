@@ -10,7 +10,7 @@ Like glicko, the introduced rating system considers each player's strength being
 * players try to win every frame,
 * frames outcomes are independent of each other.
 
-Any factors other that the *count of frames* won or lost between two opponents, such as match outcome, points scored, breaks made etc, are not taken into account.
+Any factors other that the *count of frames* won or lost between two opponents, such as match outcome, points scored, breaks made, tournament stage etc, are not taken into account.
 
 ## Description
 
@@ -20,7 +20,7 @@ Ratings are updated daily. Ratings on a given day are based on all finished rank
 
 There are three types of games, according to their importance and effect on ratings.
 
-* **Major ranking**. These games have "full" impact. It is assumed that the result matters for both opponents and thus they do their best to win. Most tournaments are major ranking.
+* **Major ranking**. These games have "full" impact. It is assumed that the result matters for both opponents and thus they do their best to win every frame. Most tournaments are major ranking.
 
 * **Minor ranking**. Minor ranking games have twice smaller effect than major ranking ones. Rating changes after playing a minor ranking game are "discounted" by a factor 0.5 compared to those observed after a major ranking game. In other words, winning two *minor* frames have the same effect on ratings than winning one *major* frame.
 Friendly matches as well as some nonimportant tournaments are minor ranking events. Under normal circumstances it is recommended to give preference to this type of games as long as players try to win.
