@@ -109,8 +109,34 @@ The model under consideration is probabilistic by its nature. Knowing the rating
 
 ## Web interface
 
-AndyScorer website provides detailed rating reports.
+AndyScorer website provides various detailed rating reports.
 
+### Ratings
+Ratings for a selected day (today by default)
+![alt text](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/snk_rating_1549395708.jpg?79537)
+with the following columns:
+* *Position*. Please note that even though rounded rating values may sometimes coincide, the reaal values are almost surely different from each other, thus one position is never shared by more than one player (this is different from the previous version).
+* *Player name*.
+* *Rating* for a given day (based on all games played before that day).
+* Last rating *change* for each player.
+* *Day* when the last ranking game was played. Notice that this date is always strictly before the day for which the ratings were generated, so games played on 11/12/2017 will only appear in the next day report for 12/12/2017 with the corresponding rating changes.
+* Rating *reliability*.
+
+Only official ratings are shown by default.
+Set the corresponding flag to see all ratings including unofficial:
+![alt text](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/snk_rating_1549395796.jpg?38962)
+
+### Official ranking
+Official club ranking (based on Monday rating of the corresponding week, current week by default):
+![alt text](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/official_rating.jpg?62134)
+contains columns:
+* *Position*.
+* *Position change* since the last week.
+* *Player*.
+* *Rating*.
+
+Players whose rating is not official and who therefore are not ranked are listed in a separate table:
+![alt text](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/official_rating_off.jpg?86926)
 
 ## F.A.Q.
 
