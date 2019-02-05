@@ -58,3 +58,7 @@ Changes in ratings depend not on a match outcome, but on the score (3-0 and 3-2 
 Imagine your rating is 100, and Ronnie O'Sullivan's rating is 3000, and you loose 10-9. Then the system will conclude that maybe you are not so bad and he is not so good, and adjust your ratings accordingly.
 
 Seriously speaking, the system does not see such thing as a match at all, it only cares about frames. So playing two matches 2-1 or one 4-2 will have exactly the same effect, as long as these matches are of the same type (minor or major).
+
+
+#### Credits
+The system was inspired by Gerardo Calzerano, designed by Anton Solomko and implemented by Anton Solomko and Luca Gherardi.
