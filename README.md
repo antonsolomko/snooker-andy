@@ -35,22 +35,6 @@ Reliability for a given player grows whenever he plays ranked games (the value b
 The more you play, the more confident the system becomes that your rating is measured accurately.
 And vise versa, long absence results in an uncertanty.
 
-#### Remarks
-
-* Rating changes depend on the score. Winning a match 3-2 or 3-0 makes a (big) difference.
-
-* Victory over a strong player (whose rating is high) "costs" more than victory over a weak player.
-Similarly, loosing to a lower rated player will cause heavier rating drop than loosing to a stronger one.
-
-* A weak player may still get rating points if he looses a match to a strong opponent but manages to win few frames (the winner will lose rating points in that case).
-
-* Rating changes for two opponents are not symmetric in general (but are always opposite).
-They depend on players reliabilities.
-Low reliability results in high rating volatility, because in that case the rating is considered to be less precise and the system tries more adjustment, while high reliability means that the system is confident in the rating accuracy and only makes little changes.
-
-* The system has weak memory: current ratings depend strongly on recent games and very weakly on games played long time ago.
-
-
 #### Types of games
 
 There are three types of games, depending on their importance and effect on ratings.
@@ -74,6 +58,32 @@ This type should be only used if players do not try to win or play not as they w
 #### Frequecy restriction
 
 If two players play with each other too often (more than once in two weeks), their minor ranking games impact gets additional "discount factor" inversely proportional to the number of games played within the past 14 days.
+
+#### Official ratings
+
+Player's rating is considered to be *official* if the reliability is positive, and *unofficial* otherwise.
+This means that newcomers' ratings are initially not official and become official only after they play certain number of games (typically aroung 20).
+Similarly, since reliability goes down with the passage of time, ratings of players who do not play for a long period of time or play too seldom sooner or later becomes unofficial until they renew.
+
+#### Official ranking
+
+Club official ranking is updated weekly on Monday ratings.
+Playres' positions in official ranking then become freezed for the whole week until the next Monday review.
+
+#### Remarks
+
+* Rating changes depend on the score. Winning a match 3-2 or 3-0 makes a (big) difference.
+
+* Victory over a strong player (whose rating is high) "costs" more than victory over a weak player.
+Similarly, loosing to a lower rated player will cause heavier rating drop than loosing to a stronger one.
+
+* A weak player may still get rating points if he looses a match to a strong opponent but manages to win few frames (the winner will lose rating points in that case).
+
+* Rating changes for two opponents are not symmetric in general (but are always opposite).
+They depend on players reliabilities.
+Low reliability results in high rating volatility, because in that case the rating is considered to be less precise and the system tries more adjustment, while high reliability means that the system is confident in the rating accuracy and only makes little changes.
+
+* The system has weak memory: current ratings depend strongly on recent games and very weakly on games played long time ago.
 
 ### Examples
 
@@ -112,10 +122,14 @@ Imagine your rating is 100, and Ronnie O'Sullivan's rating is 3000, and you loos
 
 Seriously speaking, the system does not see such thing as a match at all, it only cares about frames. So playing two matches 2-1 or one 4-2 will have exactly the same effect, as long as these matches are of the same type (minor or major).
 
-**When will I get an official rating?
+#### When will I get an official rating?
 
 
 
+#### What happens to my rating if I don't play for some time?
+
+Rating value itself will not change, but reliability will go down until eventually it hits 0 and your rating becomes *unofficial*.
+In that case you will need to play some number of games before appearing at the official ranking again.
 
 ## Credits
 The rating system was inspired by Gerardo Calzerano, designed by Anton Solomko and implemented by Anton Solomko and Luca Gherardi.
