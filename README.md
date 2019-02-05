@@ -1,17 +1,28 @@
 # Andy Rating System
 
-## Overwiev
 The [Andy](http://snooker.andyscorer.org) rating system is based on [Glicko](http://www.glicko.net/glicko.html) rating system with minor modifications. It assesses a player's strength as ability to win frames.
 
-Rigorously speaking, it considers each player's strength as a normally distributed random variable.
+Rigorously speaking, the introduced rating system considers each player's strength being a [normally distributed random variable](en.wikipedia.org/wiki/Normal_distribution). Parameters of the distributions (mean and variance) are adjusted periodically based on the games played recently to reflect the outcomes.
 
-Ratings are updated daily. Ratings on a given day are based on all finished ranked games played before that day between members of TSA (excluding "guests" like RONNIE O'SULLIVAN or JUDD TRUMP).
+#### Assumptions:
+* players try to win every frame,
+* frames outcomes are independent of each other.
+
+Ratings are updated daily. Ratings on a given day are based on all finished ranked games played before that day between members of one academy (excluding "guest" players, who are not ranked).
+
+#### Types of games
+
+There are three different types of games depending on their effect on players ratings.
+
+* **Major ranking**: These games have "full" impact.
+
+* **Minor ranking**: Minor ranking games have twice smaller effect than major ranking ones, namely winning two minor frames have the very same effect on ratings than winning one major frame. Under normal circumstances it is recommended to give preference to this type of games
+
+* **Non ranking**: These games do not have any affect on ratings at all. 
 
 There are three types of games: "major ranking", "minor ranking" and "non-ranking", that have impacts 1, 1/2 and 0, respectively. Minor ranking games have twice smaller weight then major ranking games, i.e. one major ranking frame is equivalent to two minor ranking frames. Non-ranking games do not affect ratings at all.
 Most tournaments are major ranking. Friendly matches (Amichevole), as well as some nonimportant tournaments, are minor ranking events. As a consequence, all past friendly games have some impact on current ratings. For future purposes, a non-ranking category called "Practice" was created. However, it is recommended to give preference to ranking games when possible.
 Too frequent minor ranking matches between the same two players (more then one in two weeks) have smaller impact on ratings (inversely proportional to the number of games).
-
-A player is assigned with an official rating if he/she has played at least 20 major ranking frames (or twice more minor ranking frames, e.g. 40 minor, or 12 major and 16 minor) against at least 5 different opponents and played at least once within the previous 90 days. If a player is absent for more then 90 days, the rating becomes unofficial until he/she resumes.
 
 Ratings are computed in the following way:
 Default rating for a new player is 1500.
