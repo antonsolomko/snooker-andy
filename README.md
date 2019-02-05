@@ -5,7 +5,7 @@
 The Andy rating system was designed for the [AndyScorer](http://snooker.andyscorer.org) web service to evaluate players skills in the game of [snooker](en.wikipedia.org/wiki/Snooker). 
 It is based on [Glicko](http://www.glicko.net/glicko.html) rating system with minor modifications and treats players strength as their ability to win individual frames.
 
-Like glicko, the introduced rating system considers each player strength being a [normally distributed random variable](en.wikipedia.org/wiki/Normal_distribution). 
+Like glicko, the introduced rating system considers each player's strength being a [normally distributed random variable](en.wikipedia.org/wiki/Normal_distribution). 
 Parameters of the distributions (mean and variance) are adjusted periodically based on games outcomes.
 
 The model relies on the following assumptions:
@@ -31,7 +31,7 @@ Reliability 1 would mean that the system is 100% sure in player's strength, alth
 Both values (rating and reliability) are updated daily based on all finished ranked games played the day before between members of a given club (excluding "guest" players, who are not ranked).
 The system looks at all ranked games played at a given day, estimates an expected outcome of each frame and then simultaniously adjusts players ratings according to the difference between actual results and the expectations.
 
-Reliability for a given player grows whenever he plays ranked games (the value by which it is increased is not fixed and depends on many factors, firstly opponent's rating and reliability), and decreases with the passage of time (by approximately -0.0083 every day) if he does not play.
+Reliability for a given player grows whenever he plays ranked games (the increment depends on many factors), and decreases with the passage of time (by approximately -0.0083 every day) if he does not play.
 The more you play, the more confident the system becomes that your rating is measured accurately.
 And vise versa, long absence results in an uncertanty.
 
@@ -65,10 +65,9 @@ Player's rating is considered to be *official* if the reliability is positive, a
 This means that newcomers' ratings are initially not official and become official only after they play certain number of games (typically aroung 20).
 Similarly, since reliability goes down with the passage of time, ratings of players who do not play for a long period of time or play too seldom sooner or later becomes unofficial until they renew.
 
-#### Official ranking
+#### Official rankings
 
-Club official ranking is updated weekly on Monday ratings.
-Playres' positions in official ranking then become freezed for the whole week until the next Monday review.
+Club official ranking is updated weekly based on Monday ratings.
 
 #### Remarks
 
@@ -110,7 +109,7 @@ The model under consideration is probabilistic by its nature. Knowing the rating
 
 ## Web interface
 
-AndyScorer website provides and detailed reports on various statistics.
+AndyScorer website provides detailed rating reports.
 
 
 ## F.A.Q.
