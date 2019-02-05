@@ -33,6 +33,19 @@ Example 1. 1 September 2017. Besenval is a new player. His initial rating is 150
 
 Example 2. 8 November 2017. Solomko's rating is 1788, Di Marco's rating is 1652 and more reliable. Solomko wins a major ranking match 3-2. Solomko's new rating is 1774 (-14), Di Marco's new rating is 1660 (+8). Even though Solomko has won, the system thinks that the result 3-2 was closer then 1788 vs 1652 and increases Di Marco's rating by +8 points, decreasing Solomko's one by -14 points. If it was not a major but minor ranking game, the players would get twice less, +4 and -7, respectively.
 
+
 The system has weak memory: current ratings depend strongly on recent games and very weakly on games played long time ago. As a result, players cannot rely on their past achievments only, but have to confirm their level constantly.
 
 The model under consideration is probabilistic by its nature. Knowing the ratings of two players it allows to estimate the probability for each of them to win a single frame and a match. For example, in a match (best of 5) between players whose ratings are 1700 and 1650 (provided they are equally reliable) the stronger player would win with probability 62% and the distribution of possible match outcomes would be: 3-0 18%, 3-1 24%, 3-2 20%, 2-3 16%, 1-3 14%, 0-3 8%.
+
+
+
+
+## F.A.Q.
+
+**I have won the match. Why has my rating dropped?**
+
+Changes in ratings depend not on a match outcome, but on the score (3-0 and 3-2 will cause different changes), as well as on the players ratings prior to the game. If both opponents had equal ratings before the game, the indeed winning with any score would mean getting rating points and vise versa. If however undervalued player looses a match but wins more frames than "expected" against a strong opponent, than he will still get rating points, and te winner will loose some.
+Imagine your rating is 100, and Ronnie O'Sullivan's rating is 3000, and you loose 10-9. Then the system will conclude that maybe you are not so bad and he is not so good, and adjust your ratings accordingly.
+
+Seriously speaking, the system does not see such thing as a match at all, it only cares about frames. So playing two matches 2-1 or one 4-2 will have exactly the same effect, as long as these matches are of the same type (minor or major).
