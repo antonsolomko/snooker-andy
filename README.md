@@ -54,7 +54,7 @@ AndyScorer website provides and detailed reports on various statistics.
 
 **I have won the match. Why has my rating dropped?**
 
-Changes in ratings depend not on a match outcome, but on the score (3-0 and 3-2 will cause different changes), as well as on the players ratings prior to the game. If both opponents had equal ratings before the game, the indeed winning with any score would mean getting rating points and vise versa. If however undervalued player looses a match but wins more frames than "expected" against a strong opponent, than he will still get rating points, and te winner will loose some.
+Changes in ratings depend not on a match outcome, but on the score (3-0 and 3-2 will result in different changes), as well as on the players ratings prior to the game. If both opponents had equal ratings before the game, the indeed winning with any score would mean getting rating points and vise versa. If however undervalued player looses a match but wins more frames than "expected" against a strong opponent, than he will still get rating points, and te winner will loose some.
 Imagine your rating is 100, and Ronnie O'Sullivan's rating is 3000, and you loose 10-9. Then the system will conclude that maybe you are not so bad and he is not so good, and adjust your ratings accordingly.
 
 Seriously speaking, the system does not see such thing as a match at all, it only cares about frames. So playing two matches 2-1 or one 4-2 will have exactly the same effect, as long as these matches are of the same type (minor or major).
