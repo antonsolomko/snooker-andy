@@ -12,7 +12,7 @@ Ratings are updated daily. Ratings on a given day are based on all finished rank
 
 #### Types of games
 
-There are three types of games, according to their effect on ratings.
+There are three types of games, according to their importance and effect on ratings.
 
 * **Major ranking**. These games have "full" impact. It is assumed that the result is important for both opponents and they do their best to win. Most tournaments are major ranking.
 
@@ -39,6 +39,9 @@ The system has weak memory: current ratings depend strongly on recent games and 
 The model under consideration is probabilistic by its nature. Knowing the ratings of two players it allows to estimate the probability for each of them to win a single frame and a match. For example, in a match (best of 5) between players whose ratings are 1700 and 1650 (provided they are equally reliable) the stronger player would win with probability 62% and the distribution of possible match outcomes would be: 3-0 18%, 3-1 24%, 3-2 20%, 2-3 16%, 1-3 14%, 0-3 8%.
 
 
+## Web interface
+
+AndyScorer website provides and detailed reports on various statistics.
 
 
 ## F.A.Q.
