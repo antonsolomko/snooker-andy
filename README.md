@@ -10,7 +10,7 @@ Like glicko, the introduced rating system considers each player's strength being
 * players try to win every frame,
 * frames outcomes are independent of each other.
 
-Any factors other that the *count of frames* won or lost between two opponents, such as match outcome, points scored, breaks made, tournament stage etc, are not taken into account.
+Any factors other than the *count of frames* won or lost between two opponents, such as match outcome, points scored, breaks made, tournament stage etc, are not taken into account.
 
 ## Description
 
