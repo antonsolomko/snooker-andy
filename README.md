@@ -24,20 +24,30 @@ Default rating for a new player is 1500.
 
 * **Reliability** (rescaled version of variance or deviation).
 Represents the system's confidence it its estimate of player's skills. 
-Reliability varies from -1 (default for a new players) to 1. 
-The higher the reliability, the more accurate the rating is. 
-Reliability 1 would mean that the system is 100% sure in player's rating, although this level of confidence can never be achieved.
+Varies from -1 (default for a new players) to 1. 
+The higher the reliability, the more accurate the rating is considered to be. 
+Reliability 1 would mean that the system is 100% sure in player's strength, although this level of confidence can never be achieved.
 
-Both values (rating and reliability) are updated daily based on all finished ranked games played the day before between members of a club (excluding "guest" players, who are not ranked).
+Both values (rating and reliability) are updated daily based on all finished ranked games played the day before and between members of a club (excluding "guest" players, who are not ranked).
 The system looks at all ranked games played at a given day, estimates an expected outcome of each frame and then simultaniously adjusts players ratings according to the difference between actual results and the expectations.
 
-Reliability for a given player grows whenever he plays ranked games (the value by which it is increased is not fixed and depends on many factors, firstly opponent's rating and reliability), and decreases with the passage of time (by approximately -0.0083 per day) if he does not play.
-This means that the more one plays, the more confident the system becomes that one's rating is measured accurately.
+Reliability for a given player grows whenever he plays ranked games (the value by which it is increased is not fixed and depends on many factors, firstly opponent's rating and reliability), and decreases with the passage of time (by approximately -0.0083 every day) if he does not play.
+The more you play, the more confident the system becomes that your rating is measured accurately.
 And vise versa, long absence results in an uncertanty.
 
-Victory over a strong player (whose rating is high) costs more then victory over a weak player. Winning a match 3-2 and 3-0 makes a difference.
-In general, rating changes for two opponents are not symmetric. The system has a hidden parameter that represents its confidence in a player's rating. The confidence increases after every game, and decreases from the passage of time when not playing. For players who play often, their rating is considered to be more reliable and vary less then ratings of new players or those who play infrequently and whose rating is less precise.
-A weak player may gain rating points winning few frames against a strong opponent, even loosing a match, and vise versa, a match winner may still lose some points if he/she defeats a weaker opponent with a close score.
+### Remarks
+
+* Rating changes depend on the score. Winning a match 3-2 or 3-0 makes a (big) difference.
+
+* Victory over a strong player (whose rating is high) "costs" more than victory over a weak player.
+Similarly, loosing to a lower rated player will cause heavier rating drop than loosing to a stronger one.
+
+* A weak player may still get rating points if he looses a match to a strong opponent but manages to win few frames.
+And vise versa, a match winner may still lose some points if he defeats a weaker opponent with a close score.
+
+* Rating changes for two opponents are not symmetric in general.
+They depend on both players reliabilities.
+Low reliability results in high rating volatility (because in that case the rating is considered to be less precise and the system tries more adjustment), while high reliability means that the system is confident in the rating accuracy and only makes little changes.
 
 
 #### Types of games
