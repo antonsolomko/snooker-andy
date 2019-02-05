@@ -2,7 +2,7 @@
 
 The [Andy](http://snooker.andyscorer.org) rating system is based on [Glicko](http://www.glicko.net/glicko.html) rating system with minor modifications. It assesses a player's strength as ability to win frames.
 
-Rigorously speaking, the introduced rating system considers each player's strength being a [normally distributed random variable](en.wikipedia.org/wiki/Normal_distribution). Parameters of the distributions (mean and variance) are adjusted periodically based on the games played recently to reflect the outcomes.
+Rigorously speaking, the introduced rating system considers each player's strength being a [normally distributed random variable](en.wikipedia.org/wiki/Normal_distribution). Parameters of the distributions (mean and variance) are adjusted periodically based the games outcomes.
 
 #### Assumptions:
 * players try to win every frame,
@@ -12,16 +12,15 @@ Ratings are updated daily. Ratings on a given day are based on all finished rank
 
 #### Types of games
 
-There are three different types of games depending on their effect on players ratings.
+There are three types of games, according to their effect on ratings.
 
-* **Major ranking**: These games have "full" impact.
+* **Major ranking**. These games have "full" impact. It is assumed that the result is important for both opponents and they do their best to win. Most tournaments are major ranking.
 
-* **Minor ranking**: Minor ranking games have twice smaller effect than major ranking ones, namely winning two minor frames have the very same effect on ratings than winning one major frame. Under normal circumstances it is recommended to give preference to this type of games
+* **Minor ranking**. Minor ranking games have twice smaller effect than major ranking ones. Rating changes after playing a minor ranking game are "discounted" by a factor 0.5 compared to those observed after a major ranking game. In other words, winning two *minor* frames have the same effect on ratings than winning one *major* frame.
+Friendly matches as well as some nonimportant tournaments are minor ranking events. Under normal circumstances it is recommended to give preference to this type of games as long as players try to win.
 
-* **Non ranking**: These games do not have any affect on ratings at all. 
+* **Non ranking**. These games do not have any affect on ratings at all. This type should be only used if players do not try to win or play not as they would normally do so that the outcome does not adequately represent their real abilities.
 
-There are three types of games: "major ranking", "minor ranking" and "non-ranking", that have impacts 1, 1/2 and 0, respectively. Minor ranking games have twice smaller weight then major ranking games, i.e. one major ranking frame is equivalent to two minor ranking frames. Non-ranking games do not affect ratings at all.
-Most tournaments are major ranking. Friendly matches (Amichevole), as well as some nonimportant tournaments, are minor ranking events. As a consequence, all past friendly games have some impact on current ratings. For future purposes, a non-ranking category called "Practice" was created. However, it is recommended to give preference to ranking games when possible.
 Too frequent minor ranking matches between the same two players (more then one in two weeks) have smaller impact on ratings (inversely proportional to the number of games).
 
 Ratings are computed in the following way:
