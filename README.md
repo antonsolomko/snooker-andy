@@ -113,7 +113,7 @@ AndyScorer website provides various detailed rating reports.
 
 ### Ratings
 Ratings for a selected day (today by default)
-![alt text](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/snk_rating_1549395708.jpg?79537)
+![alt text](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/snk_rating_1549395708.jpg?79537)\
 with the following columns:
 * *Position*. Please note that even though rounded rating values may sometimes coincide, the reaal values are almost surely different from each other, thus one position is never shared by more than one player (this is different from the previous version).
 * *Player name*.
@@ -127,16 +127,27 @@ Set the corresponding flag to see all ratings including unofficial:
 ![alt text](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/snk_rating_1549395796.jpg?38962)
 
 ### Official ranking
-Official club ranking (based on Monday rating of the corresponding week, current week by default):
-![alt text](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/official_rating.jpg?62134)
+Official club ranking (based on Monday ratings of the selected week, current week by default):
+![alt text](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/official_rating.jpg?62134)\
 contains columns:
-* *Position*.
+* *Position* (rank).
 * *Position change* since the last week.
 * *Player*.
 * *Rating*.
 
 Players whose rating is not official and who therefore are not ranked are listed in a separate table:
 ![alt text](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/official_rating_off.jpg?86926)
+
+### Leaders
+List of official ranking leaders for every week
+![alt text](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/number_ones_1549398666.jpg?77396)\
+and overall leaders by number of weeks holding the first plase
+![alt text](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/number_ones_total_1549398667.jpg?34188)
+
+### Rating/ranking history
+Record of all rating and ranking changes for a selected player:
+![alt text](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/player_rating_history_1549399068.jpg?13961)\
+![alt text](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/player_ranking_history_1549399068.jpg?98891)
 
 ## F.A.Q.
 
