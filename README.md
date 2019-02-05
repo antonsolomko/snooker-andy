@@ -6,7 +6,7 @@ The Andy rating system was designed for the [AndyScorer](http://snooker.andyscor
 
 Like glicko, the introduced rating system considers each player's strength being a [normally distributed random variable](en.wikipedia.org/wiki/Normal_distribution). Parameters of the distributions (mean and variance) are adjusted periodically based on games outcomes.
 
-#### Assumptions:
+The model relies on the following assumptions:
 * players try to win every frame,
 * frames outcomes are independent of each other.
 
