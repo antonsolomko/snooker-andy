@@ -12,7 +12,8 @@ The model relies on the following assumptions:
 * players try to win every frame,
 * frames outcomes are independent of each other.
 
-Any factors other than the *count of frames* (won or lost) between two opponents, such as match outcome, points scored, breaks made, tournament stage etc, are not taken into account.
+Only *count of frames* won or lost by each pair of opponents determines the resulting ratings.
+Any other factors, such as match outcome, points scored, breaks made, tournament stage etc, are not taken into account.
 
 ## Description
 
