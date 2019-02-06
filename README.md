@@ -107,6 +107,7 @@ Low reliability results in high rating volatility, because in that case the rati
 ### Examples
 
 #### Example 1. 
+![alt text](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/2000396_match_facts.jpg?1549464833)\
 **A** is a new player playing his first ever game. 
 His initial rating is 1500 and the system knows nothing about his real strenghs yet. 
 He wins a minor ranking match 4-1 against **B**, whose rating 1745 is more trustworthy. 
