@@ -17,7 +17,7 @@ Any other factors, such as match outcome, points scored, breaks made, tournament
 
 ## Description
 
-To each player two numbers are associated:
+To each player two numbers are assigned:
 
 * **Rating**.
 Represents player's strength (ability to win frames).
