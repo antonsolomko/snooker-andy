@@ -5,14 +5,14 @@
 The Andy rating system was designed for the [AndyScorer](http://snooker.andyscorer.org) web service to evaluate players skills in the game of [snooker](en.wikipedia.org/wiki/Snooker). 
 It is based on [Glicko](http://www.glicko.net/glicko.html) rating system with minor modifications and treats players strength as their ability to win individual frames.
 
-Like glicko, the introduced rating system considers each player's strength being a [normally distributed random variable](en.wikipedia.org/wiki/Normal_distribution). 
+The introduced rating system considers each player's strength being a [normally distributed random variable](en.wikipedia.org/wiki/Normal_distribution). 
 Parameters of the distributions (mean and variance) are adjusted periodically based on games outcomes.
 
 The model relies on the following assumptions:
 * players try to win every frame,
 * frames outcomes are independent of each other.
 
-Any factors other than the *count of frames* won or lost between two opponents, such as match outcome, points scored, breaks made, tournament stage etc, are not taken into account.
+Any factors other than the *count of frames* (won or lost) between two opponents, such as match outcome, points scored, breaks made, tournament stage etc, are not taken into account.
 
 ## Description
 
@@ -22,18 +22,22 @@ To each player two numbers are associated:
 Represents player's strength (ability to win frames).
 Default rating for a new player is 1500.
 
-* **Reliability** (rescaled version of variance or deviation).
-Represents the system's confidence it its estimate of player's skills. 
-Varies from -1 (default for a new players) to 1. 
+* **Reliability** (rescaled version of variance).
+This is an auxiliary parameter that represents the system's confidence it its estimate of player's skills. 
+Reliability varies from -1 (default for new players) to 1. 
 The higher the reliability, the more accurate the rating is considered to be. 
 Reliability 1 would mean that the system is 100% sure in player's strength, although this level of confidence can never be achieved.
 
-Both values (rating and reliability) are updated daily based on all finished ranked games played the day before between members of a given club (excluding "guest" players, who are not ranked).
-The system looks at all ranked games played at a given day, estimates an expected outcome of each frame and then simultaniously adjusts players ratings according to the difference between actual results and the expectations.
+Both numbers (rating and reliability) are updated *daily* based on all ranking games played the day before between members of a given club (excluding "guest" players, who are not ranked).
+The system estimates an expected outcome of each game and then simultaniously adjusts players ratings according to the difference between actual results and the expectations.
+Thus whenever a player plays a ranking game, he obtains an updated rating the next day. Otherwise the rating value remains unchanged.
 
-Reliability for a given player grows whenever he plays ranked games (the increment depends on many factors), and decreases with the passage of time (by approximately -0.0083 every day) if he does not play.
-The more you play, the more confident the system becomes that your rating is measured accurately.
-And vise versa, long absence results in an uncertanty.
+Reliability changes every day in two ways:
+* whenever ranked games are played, reliability grows (with an increment depending on many factors).
+* when not playing, reliability decreases with the passage of time (by 0.008(3) every day).
+
+The more you play, the more trustworthy your rating is.
+And vise versa, long absence results in more uncertanty.
 
 #### Types of games
 
