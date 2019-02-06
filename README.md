@@ -59,23 +59,23 @@ Difference in the opponents reliabilities also plays some role.
 
 There are three types of games, depending on their importance and effect on ratings:
 
-* **Major ranking** games have "full" impact on ratings. 
-It is assumed that the result matters for both opponents and thus they do their best to win every frame. 
+* **Major ranking** games have full impact on ratings. 
+It is assumed that the result of such game is important and thus both opponents do their best to win every frame. 
 Most tournaments are major ranking.
 
-* **Minor ranking** games have twice smaller effect on ratings than major ranking ones. 
-Rating changes for minor ranking games are "discounted" by the factor 0.5 compared to those observed after a major ranking game. 
+* **Minor ranking** games have twice smaller effect on ratings than major ranking games.
+All rating changes caused by minor ranking games are "discounted" by half. 
 In other words, winning two *minor* frames have the same effect on ratings than winning one *major* frame.
-Friendly matches as well as some nonimportant tournaments are minor ranking events. 
-Under normal circumstances it is recommended to give preference to this type of games as long as players try to win.
+Friendly matches as well as some small tournaments are minor ranking events. 
+Under normal circumstances, it is recommended to give preference to this type of games, as long as players try to win.
 
 * **Non ranking** games do not affect ratings at all. 
-This type should be only used if players do not try to win or play not as they would normally do so that the outcome does not adequately represent their real abilities.
+This type should be only used if players do not try to win or play not as they would normally do, so that the outcome does not adequately represent their real abilities.
 
 #### Guest players
 
 Players that are not members of an academy ("guest" players) are not ranked.
-Games where unranked players take part do not affect ratings.
+Any games where unranked players take part do not affect ratings.
 
 #### Frequecy restriction
 
@@ -86,7 +86,7 @@ If two players play with each other too often (more than once in two weeks), the
 Reliability serves as an indicator for the players official/unofficial status. 
 
 Rating is considered to be *official* if the reliability is positive, and *unofficial* otherwise.
-This means that newcomers ratings are initially not official and become official only after they play certain number of games (typically aroung 20).
+This means that newcomers ratings are initially not official and become official only after they play certain number of games (typically around 20).
 
 Similarly, since reliability constantly decreases with the passage of time, ratings of players who do not play for a while sooner or later (no more than in 120 days) become *unofficial*.
 If that happens, they need to play certain number of gamse to confirm their level, before returning the official status.
