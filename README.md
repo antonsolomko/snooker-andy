@@ -52,7 +52,7 @@ This is the key factor: more "unexpected" outcomes result in bigger rating chang
 
 * *Raliabilities*. 
 If raliability is high, rating changes will be small (if the system is already confident in player skills, information provided by just one frame will not be enough to change rating much).
-On the contrary, low relibility leads to big changes in the rating (information obtained from every frame will be perceptible compared to what system already knows, hence it will try bolder rating tuning).
+On the contrary, low relibility leads to big changes in the rating (information obtained from every frame will be perceptible compared to what the system already knows, thus it will try a bolder rating tuning).
 Difference in the opponents reliabilities also plays some role.
 
 #### Types of games
@@ -100,9 +100,9 @@ Club official ranking is updated weekly based on Monday ratings.
 
 #### Remarks
 
-* Rating changes depend on the score. Winning a match 3-2 or 3-0 makes a (big) difference.
+* Rating changes depend on the score. Winning a match 3-2 or 3-0 makes a difference.
 
-* Victory over a strong player (whose rating is high) "costs" more than victory over a weak player.
+* Victory over a strong opponent (whose rating is high) costs more than victory over a weak player.
 Similarly, loosing to a lower rated player will cause heavier rating drop than loosing to a stronger one.
 
 * A weak player may still get rating points if he looses a match to a strong opponent but manages to win few frames (the winner will lose rating points in that case).
@@ -111,7 +111,8 @@ Similarly, loosing to a lower rated player will cause heavier rating drop than l
 They depend on players reliabilities.
 Low reliability results in high rating volatility, because in that case the rating is considered to be less precise and the system tries more adjustment, while high reliability means that the system is confident in the rating accuracy and only makes little changes.
 
-* The system has weak memory: current ratings depend strongly on recent games and very weakly on games played long time ago.
+* The system has weak memory: althoug all past games have some influence on the ratings, current ratings depend heavily on recent games and only slightly on games played long time ago.
+(Assuming that players play regularly, of course. Ratings of players who stopped playing at all are frozen.)
 
 ### Examples
 
