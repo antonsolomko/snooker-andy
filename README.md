@@ -36,10 +36,8 @@ Otherwise, in case of player's inactivity, the rating value remains unchanged.
 
 Reliability changes every day in two ways:
 * Whenever ranked games are played, reliability grows (with an increment depending on many factors).
-* When not playing, reliability decreases with the passage of time (by 0.008(3) every day).
-
-The more you play, the more trustworthy your rating is.
-And vise versa, long absence results in more uncertanty.
+Informally speaking, the more you play, the more trustworthy your rating is.
+* When not playing, reliability decreases with the passage of time (by 0.008(3) every day), i.e. any absence period results in uncertanty.
 
 For every frame won/lost a player obtains/looses rating points.
 The number of points depends on:
