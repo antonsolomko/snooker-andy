@@ -38,6 +38,7 @@ Reliability changes every day (regardless of player activity) in two alternative
 * Whenever ranked games are played, reliability grows (the increment depends on many factors).
 That is, the more you play, the more trustworthy your rating is.
 * When not playing, reliability decreases with the passage of time (by 0.008(3) every day), i.e. any absence period results in uncertanty.
+Reliability drops to its minimum in no more than 2 years.
 
 For every frame won/lost players obtain/lose rating points.
 The number of points depends on two factors:
@@ -86,9 +87,12 @@ If two players play with each other too often (more than once in two weeks), the
 #### Official ratings
 
 Reliability serves as an indicator for the players official/unofficial status. 
+
 Rating is considered to be *official* if the reliability is positive, and *unofficial* otherwise.
 This means that newcomers ratings are initially not official and become official only after they play certain number of games (typically aroung 20).
-Similarly, since reliability goes down with the passage of time, ratings of players who do not play for a long period of time or play too seldom sooner or later becomes unofficial until they renew.
+
+Similarly, since reliability constantly decreases with the passage of time, ratings of players who do not play for a long period of time sooner or later (no more than in 120 days) will become *unofficial*.
+If that happens, they will need to play certain number of gamse to confirm their level, before they return their official status.
 
 #### Official rankings
 
