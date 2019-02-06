@@ -31,24 +31,28 @@ The higher the reliability is, the more accurate the rating is considered to be.
 
 Both numbers (rating and reliability) are updated *daily* based on all ranked games played the day before.
 The system estimates an expected outcome of each game and then simultaniously adjusts players ratings according to the difference between actual results and the expectations.
-An updated rating can be seen the *next day* after games took place.
-The rating value remains unchanged is case of player inactivity or absence.
+Updated ratings can be seen the *next day* after the games took place.
+If player does not play ranked games, his rating value remains unchanged.
 
-Reliability changes every day (regardless of player activity) in two ways:
-* Whenever ranked games are played, reliability grows (increment depends on many factors).
-The more you play, the more trustworthy your rating is.
+Reliability changes every day (regardless of player activity) in two alternative ways:
+* Whenever ranked games are played, reliability grows (the increment depends on many factors).
+That is, the more you play, the more trustworthy your rating is.
 * When not playing, reliability decreases with the passage of time (by 0.008(3) every day), i.e. any absence period results in uncertanty.
 
-For every frame won/lost a player obtains/looses rating points.
-The number of points depends on:
-* *The difference between opponents ratings prior to the game*. 
-This is the main factor: more "unexpected" outcomes lead to bigger rating changes. 
-Player with high rating will not get much from winning on weak opponent, but if loosing to one will lose a lot. 
-Similarly, low rated player gets many points from beating a stronger opponent, but looses only few points when looses a frame.
-* *Players raliabilities*. 
-If raliability is high (meaning that the system is quite confident in player skills), rating changes will be small.
-On the contrary, the systems "knows little" about players with low reliability, and therefore any frame will result in bigger changes in ratings (the system will try to find a correct value based on little information it has about the player).
-Difference in players reliabilities also matters.
+For every frame won/lost players obtain/lose rating points.
+The number of points depends on two factors:
+* *Difference between opponents ratings prior to the game*. 
+This is the key factor: more "unexpected" outcomes result in bigger rating changes.
+
+| Player A rating | Player B rating | Frame winner | Resulting rating change |
+| :---------------: | :-----------------: | :-------: | :-----------------------: |
+| High | Low | **A** (expected) | A gets few points, B loses few points |
+| High | Low | **B** (unexpected) | A loses many point, B gets many points |
+
+* *Raliabilities*. 
+If raliability is high, rating changes will be small (if the system is already confident in player skills, one frame cannot provide enough information to change the rating much).
+On the contrary, low relibility leads to big changes in the rating value (the system will adjust its estimates based on limited information it gets about player skills).
+Difference in the opponents reliabilities also plays some role.
 
 #### Types of games
 
