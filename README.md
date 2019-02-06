@@ -30,15 +30,22 @@ The higher the reliability, the more accurate the rating is considered to be.
 
 Both numbers (rating and reliability) are updated *daily* based on all ranking games played the day before.
 The system estimates an expected outcome of each game and then simultaniously adjusts players ratings according to the difference between actual results and the expectations.
-That is, a new rating for a given player appears in the system the next day after any ranking game played by him.
-Otherwise, in case of inactivity, the rating value remains unchanged.
+That is, a new rating for a given player is displayed in the system the *next day* after ranking games played by the player.
+Otherwise, in case of player's inactivity, the rating value remains unchanged.
 
 Reliability changes every day in two ways:
-* whenever ranked games are played, reliability grows (with an increment depending on many factors).
-* when not playing, reliability decreases with the passage of time (by 0.008(3) every day).
+* Whenever ranked games are played, reliability grows (with an increment depending on many factors).
+* When not playing, reliability decreases with the passage of time (by 0.008(3) every day).
 
 The more you play, the more trustworthy your rating is.
 And vise versa, long absence results in more uncertanty.
+
+For every frame won/lost a player obtains/looses rating points.
+The number of points depends on many factors:
+* The difference between opponents ratings prior to the game. This is the main factor: the more "unexpected" an outcome is, the bigger a prize/loss. Player with high rating will not get much from winning on weak opponent, but if loosing to one will lose a lot. Similarly, low rated player gets many points from beating a stronger opponent, but looses only few points when looses a frame.
+* Player raliability. If raliability is high (meaning that the system is quite confident in player skills), rating changes will be small.
+On the other hand, the systems "knows little" about players with low reliability, and therefore any frame will result in bigger changes in rating (the system will try to find a correct value based on little information it has about the player).
+* Difference in players reliabilities.
 
 #### Types of games
 
