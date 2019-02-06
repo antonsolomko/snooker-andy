@@ -91,8 +91,8 @@ Reliability serves as an indicator for the players official/unofficial status.
 Rating is considered to be *official* if the reliability is positive, and *unofficial* otherwise.
 This means that newcomers ratings are initially not official and become official only after they play certain number of games (typically aroung 20).
 
-Similarly, since reliability constantly decreases with the passage of time, ratings of players who do not play for a long period of time sooner or later (no more than in 120 days) will become *unofficial*.
-If that happens, they will need to play certain number of gamse to confirm their level, before they return their official status.
+Similarly, since reliability constantly decreases with the passage of time, ratings of players who do not play for a while sooner or later (no more than in 120 days) become *unofficial*.
+If that happens, they need to play certain number of gamse to confirm their level, before returning the official status.
 
 #### Official rankings
 
