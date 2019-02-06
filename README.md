@@ -30,7 +30,7 @@ The higher the reliability, the more accurate the rating is considered to be.
 
 Both numbers (rating and reliability) are updated *daily* based on all ranking games played the day before.
 The system estimates an expected outcome of each game and then simultaniously adjusts players ratings according to the difference between actual results and the expectations.
-That is, an updated rating for a given player appear in the system the next day after any ranking game played by him.
+That is, a new rating for a given player appears in the system the next day after any ranking game played by him.
 Otherwise, in case of inactivity, the rating value remains unchanged.
 
 Reliability changes every day in two ways:
