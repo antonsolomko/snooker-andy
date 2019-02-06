@@ -46,10 +46,10 @@ The number of points depends on:
 This is the main factor: more "unexpected" outcomes lead to bigger rating changes. 
 Player with high rating will not get much from winning on weak opponent, but if loosing to one will lose a lot. 
 Similarly, low rated player gets many points from beating a stronger opponent, but looses only few points when looses a frame.
-* *Player raliability*. 
+* *Players raliabilities*. 
 If raliability is high (meaning that the system is quite confident in player skills), rating changes will be small.
-On the other hand, the systems "knows little" about players with low reliability, and therefore any frame will result in bigger changes in rating (the system will try to find a correct value based on little information it has about the player).
-* *Difference in players reliabilities*.
+On the contrary, the systems "knows little" about players with low reliability, and therefore any frame will result in bigger changes in ratings (the system will try to find a correct value based on little information it has about the player).
+Difference in players reliabilities also matters.
 
 #### Types of games
 
