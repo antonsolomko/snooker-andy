@@ -24,19 +24,19 @@ Represents player's strength (ability to win frames).
 Initial rating for a new player is 1500.
 
 * **Reliability** (rescaled version of variance).
-This is an auxiliary parameter that represents the system's confidence in player skills estimate.
+An auxiliary parameter that represents the system's confidence in player rating estimate.
 Reliability varies from -1 (default for new players) to 1. 
 The higher the reliability is, the more accurate the rating is considered to be. 
 (Reliability 1 would mean that the system is 100% sure in player's strength, although this level of confidence can never be achieved.)
 
-Both numbers (rating and reliability) are updated *daily* based on all ranking games played the day before.
+Both numbers (rating and reliability) are updated *daily* based on all ranked games played the day before.
 The system estimates an expected outcome of each game and then simultaniously adjusts players ratings according to the difference between actual results and the expectations.
-That is, a new rating for a given player is displayed in the system the *next day* after ranking games played by the player.
-Otherwise, in case of player's inactivity, the rating value remains unchanged.
+An updated rating can be seen the *next day* after games took place.
+The rating value remains unchanged is case of player inactivity or absence.
 
-Reliability changes every day in two ways:
-* Whenever ranked games are played, reliability grows (with an increment depending on many factors).
-Informally speaking, the more you play, the more trustworthy your rating is.
+Reliability changes every day (regardless of player activity) in two ways:
+* Whenever ranked games are played, reliability grows (increment depends on many factors).
+The more you play, the more trustworthy your rating is.
 * When not playing, reliability decreases with the passage of time (by 0.008(3) every day), i.e. any absence period results in uncertanty.
 
 For every frame won/lost a player obtains/looses rating points.
@@ -81,8 +81,9 @@ If two players play with each other too often (more than once in two weeks), the
 
 #### Official ratings
 
-Player's rating is considered to be *official* if the reliability is positive, and *unofficial* otherwise.
-This means that newcomers' ratings are initially not official and become official only after they play certain number of games (typically aroung 20).
+Reliability serves as an indicator for the players official/unofficial status. 
+Rating is considered to be *official* if the reliability is positive, and *unofficial* otherwise.
+This means that newcomers ratings are initially not official and become official only after they play certain number of games (typically aroung 20).
 Similarly, since reliability goes down with the passage of time, ratings of players who do not play for a long period of time or play too seldom sooner or later becomes unofficial until they renew.
 
 #### Official rankings
