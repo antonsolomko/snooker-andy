@@ -26,7 +26,7 @@ Initial rating for a new player is 1500.
 * **Reliability** (rescaled version of variance).
 This is an auxiliary parameter that represents the system's confidence in player skills estimate.
 Reliability varies from -1 (default for new players) to 1. 
-The higher the reliability, the more accurate the rating is considered to be. 
+The higher the reliability is, the more accurate the rating is considered to be. 
 (Reliability 1 would mean that the system is 100% sure in player's strength, although this level of confidence can never be achieved.)
 
 Both numbers (rating and reliability) are updated *daily* based on all ranking games played the day before.
