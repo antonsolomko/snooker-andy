@@ -5,7 +5,7 @@
 The Andy rating system was designed for the [AndyScorer](http://snooker.andyscorer.org) web service to evaluate players skills in the game of [snooker](en.wikipedia.org/wiki/Snooker). 
 It is based on [Glicko](http://www.glicko.net/glicko.html) rating system with minor modifications and treats players strength as their ability to win individual frames.
 
-The introduced rating system considers each player's strength being a [normally distributed random variable](en.wikipedia.org/wiki/Normal_distribution). 
+The introduced rating system considers each player's strength being [normally distributed random variable](en.wikipedia.org/wiki/Normal_distribution). 
 Parameters of the distributions (mean and variance) are adjusted periodically based on games outcomes.
 
 The model relies on the following assumptions:
@@ -20,17 +20,18 @@ To each player two numbers are associated:
 
 * **Rating**.
 Represents player's strength (ability to win frames).
-Default rating for a new player is 1500.
+Initial rating for a new player is 1500.
 
 * **Reliability** (rescaled version of variance).
-This is an auxiliary parameter that represents the system's confidence it its estimate of player's skills. 
+This is an auxiliary parameter that represents the system's confidence in player skills estimate.
 Reliability varies from -1 (default for new players) to 1. 
 The higher the reliability, the more accurate the rating is considered to be. 
-Reliability 1 would mean that the system is 100% sure in player's strength, although this level of confidence can never be achieved.
+(Reliability 1 would mean that the system is 100% sure in player's strength, although this level of confidence can never be achieved.)
 
-Both numbers (rating and reliability) are updated *daily* based on all ranking games played the day before between members of a given club (excluding "guest" players, who are not ranked).
+Both numbers (rating and reliability) are updated *daily* based on all ranking games played the day before.
 The system estimates an expected outcome of each game and then simultaniously adjusts players ratings according to the difference between actual results and the expectations.
-Thus whenever a player plays a ranking game, he obtains an updated rating the next day. Otherwise the rating value remains unchanged.
+That is, an updated rating for a given player appear in the system the next day after a ranking game played by him.
+Otherwise, in case of inactivity, the rating value remains unchanged.
 
 Reliability changes every day in two ways:
 * whenever ranked games are played, reliability grows (with an increment depending on many factors).
@@ -58,6 +59,11 @@ Under normal circumstances it is recommended to give preference to this type of 
 * **Non ranking**. 
 These games do not affect ratings at all. 
 This type should be only used if players do not try to win or play not as they would normally do so that the outcome does not adequately represent their real abilities.
+
+#### Guest players
+
+Players that are not members of an academy ("guest" players) are not ranked.
+Games where unranked players take part do not affect ratings.
 
 #### Frequecy restriction
 
