@@ -57,7 +57,7 @@ Difference in the opponents reliabilities also plays some role.
 
 #### Remarks
 
-* Rating changes depend on the score, not on a match result. Winning a match 3-0 or 3-2 makes an essential difference.
+* Rating changes depend on the *score*, not on a match result. Winning a match 3-0 or 3-2 makes an (essential) difference.
 
 * Victory over a high rated player costs more than victory over a low rated player.
 Similarly, loss to a low rated player costs more than loss to a high rated player.
