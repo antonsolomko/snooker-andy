@@ -40,17 +40,17 @@ That is, the more you play, the more trustworthy your rating is.
 * When not playing, reliability decreases with the passage of time (by 0.008(3) every day), i.e. any absence period results in uncertanty.
 Reliability drops to its minimum in no more than 2 years.
 
-For every frame won/lost players obtain/lose rating points.
+Roughly speaking, for every ranked frame players obtain or lose rating points.
 The number of points depends on two factors:
-* *Difference between opponents ratings* prior to the game. 
-This is the key factor: more "unexpected" outcomes result in bigger rating changes.
+1. *Difference between opponents ratings* prior to the game. 
+This is the key factor: more "unexpected" outcomes result in bigger rating changes:
 
 | Player A rating | Player B rating | Frame winner | Resulting rating change |
 | :---------------: | :-----------------: | :-------: | :-----------------------: |
 | High | Low | **A** (expected) | A gets few points, B loses few points |
 | High | Low | **B** (unexpected) | A loses many point, B gets many points |
 
-* *Raliabilities*. 
+2. *Raliabilities*. 
 If raliability is high, rating changes will be small (if the system is already confident in player skills, information provided by just one frame will not be enough to change rating much).
 On the contrary, low reliability leads to big volatility of the rating (information obtained from every frame will be perceptible compared to what the system already knows, thus it will try a bolder rating tuning).
 Difference in the opponents reliabilities also plays some role.
