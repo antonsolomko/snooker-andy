@@ -126,6 +126,7 @@ New reliabilities of the two players are -0.3 (unofficial) and 0.4, respectively
 
 #### Example 2.
 ![drawing](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/2000546_match_facts.jpg?1549549256)
+
 At the day of a game **A.S.**'s rating is 1858 (reliability 0.48), **P.DM.**'s rating is 1684 and more reliable (0.7).
 **A.S.** wins a major ranking match 3-2 (the only game played by both players that day).
 **A.S.**'s new rating next day is 1830 (-28), while **P.DM.**'s new rating is 1701 (+17).
