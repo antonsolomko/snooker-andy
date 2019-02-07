@@ -124,12 +124,15 @@ Defeating a player with a fairly precise rating of 1759 is a reasonable evidence
 New reliabilities of the two players are -0.3 (unofficial) and 0.4, respectively.
 ![drawing](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/snk_rating_1549549075.jpg?34352)
 
-#### Example 2. 
-**A**'s rating is 1788, **B**'s rating is 1652 and more reliable.
-**A** wins a major ranking match 3-2.
-**A**'s new rating is 1774 (-14), while **B**'s new rating is 1660 (+8).
-Even though **A** has won, the system thinks that the result 3-2 was closer then 1788 vs 1652 and increases **B**'s rating by +8 points, decreasing **A**'s one by -14 points.
-If it was not a major but minor ranking game, the players would get twice less, +4 and -7, respectively.
+#### Example 2.
+![drawing](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/2000546_match_facts.jpg?1549549256)
+At the day of a game **A.S.**'s rating is 1858 (reliability 0.48), **P.DM.**'s rating is 1684 and more reliable (0.7).
+**A.S.** wins a major ranking match 3-2 (the only game played by both players that day).
+**A.S.**'s new rating next day is 1830 (-28), while **P.DM.**'s new rating is 1701 (+17).
+Even though **A.S.** has won the match, the system thinks that the result 3-2 was closer then 1858 vs 1684, therefore adds +17 points to **P.DM.**'s rating, while decreasing **A.S.**'s rating by -28 points.
+(If it was not a *minor* ranking game, the players would get twice less, +9 and -14 points, respectively.)
+Both players reliabilities grow after the game to 0.6 and 0.74, respectively.
+![drawing](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/snk_rating_1549549928.jpg?3261)
 
 
 ## Probabilistic interpretation
