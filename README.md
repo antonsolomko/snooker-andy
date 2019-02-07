@@ -112,10 +112,10 @@ All major ranking games have full impact on ratings, no matter how often they ar
 
 Player's rating is said to be *official* if the reliability is positive, and *unofficial* otherwise.
 
-This means that new players initially get unofficial ratings (default reliability is -1), and obtain official status only after they play some number of games (typically around 20), which is enough for their rating to stabilize near its true value.
+This means that new players initially get unofficial ratings (default reliability is -1), and obtain official status only after they have played some number of games (typically around 20, enough for the rating to stabilize near its real value).
 
-Since reliability of inactive players constantly decreases with the passage of time, ratings of those who do not play for a while sooner or later (no more than in 120 days) become *unofficial*.
-If that happens, they need to play certain number of gamse to confirm their level, before returning the official status.
+Since reliability of inactive players constantly decreases with the passage of time, ratings of those who do not play for a while sooner or later (but no more than in 120 days) become *unofficial*.
+If that happens, they need to play certain number of gamse to confirm their level, before they can return their official status.
 
 ### Official ranking
 
