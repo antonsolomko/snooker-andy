@@ -117,9 +117,10 @@ This means that new players initially get unofficial ratings (default reliabilit
 Since reliability of inactive players constantly decreases with the passage of time, ratings of those who do not play for a while sooner or later (but no more than in 120 days) become *unofficial*.
 If that happens, they need to play certain number of gamse to confirm their level, before they can return their official status.
 
-### Official ranking
+### Club ranking
 
-Club official ranking is updated once a week based on Monday official ratings.
+Club official ranking is updated once a week based on Monday ratings.
+Players whose rating is unofficial stay unranked.
 
 
 ## Probabilistic interpretation
