@@ -113,6 +113,21 @@ If that happens, they need to play certain number of gamse to confirm their leve
 
 Club official ranking is updated weekly based on Monday ratings.
 
+
+## Probabilistic interpretation
+
+Since the model under consideration is stochastic, knowing the ratings of two players it allows to estimate the *probability* for each of them to win a single frame and hence a match.
+For example, between players whose ratings are 1700 and 1650 (provided they are equally reliable) the stronger one would win a frame with probability 62% and the distribution of possible match outcomes for a "best of 5 frames" match would be:
+
+Score | Probability
+:--:|:--:
+3-0 |18%
+3-1 |24%
+3-2 |20%
+2-3 |16%
+1-3 |14%
+0-3 |8%
+
 ### Examples
 
 #### Example 1. 
@@ -133,11 +148,6 @@ New reliabilities of the two players are -0.3 (unofficial) and 0.4, respectively
 Even though **A.S.** has won the match, the system thinks that the result 3-2 was closer then 1858 vs 1684, thus adds +17 points to **P.DM.** and subtracts 28 points from **A.S.** (notice that the less reliable rating changes more).
 If it was a *minor* ranking game instead, the players would get twice less, +9 and -14 points, respectively.
 ![drawing](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/snk_rating_1549549928.jpg?3261)
-
-
-## Probabilistic interpretation
-
-The model under consideration is probabilistic by its nature. Knowing the ratings of two players it allows to estimate the probability for each of them to win a single frame and a match. For example, in a match (best of 5) between players whose ratings are 1700 and 1650 (provided they are equally reliable) the stronger player would win with probability 62% and the distribution of possible match outcomes would be: 3-0 18%, 3-1 24%, 3-2 20%, 2-3 16%, 1-3 14%, 0-3 8%.
 
 
 ## Web interface
