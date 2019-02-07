@@ -147,6 +147,7 @@ He wins a friendly (minor ranking) match 4-1 against **D.M.**, whose rating 1759
 As the next day report reveals, **A.B.** gains +413 rating points, while **D.M.** only looses -61. 
 Defeating a player with a fairly precise rating of 1759 is a reasonable evidence that **A.B.**'s strength is probably much higher than 1500. **D.M.**'s rating should decrease by a smaller amount, because his rating is already precisely measured to be near 1759, and he lost to a player whose rating cannot be trusted, therefore little information about **D.M.**'s playing strength has been learned from that match.
 New reliabilities of the two players are -0.3 (unofficial) and 0.4, respectively.
+
 ![](img/Example1.jpg)
 
 #### Example 2.
@@ -156,6 +157,7 @@ New reliabilities of the two players are -0.3 (unofficial) and 0.4, respectively
 **A.S.**'s new rating is 1830 (-28), while **P.DM.**'s one is 1701 (+17).
 Even though **A.S.** has won the match, the system thinks that the result 3-2 was closer then 1858 vs 1684, thus adds +17 points to **P.DM.** and subtracts 28 points from **A.S.** (notice that the less reliable rating changes more).
 If it was a *minor* ranking game instead, the players would get twice less, +9 and -14 points, respectively.
+
 ![](img/Example2.jpg)
 
 
