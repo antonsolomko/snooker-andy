@@ -28,6 +28,7 @@ An auxiliary parameter that represents the system's confidence in player rating 
 Reliability varies from -1 (default for new players) to 1. 
 The higher the reliability is, the more accurate the rating is considered to be. 
 (Reliability 1 would mean that the system is 100% sure in player's strength, although this level of confidence can never be achieved.)
+Reliability serves as an indicator for player [official status](#official).
 
 Both numbers (rating and reliability) are updated *daily* based on all ranked games played the day before.
 The system estimates an expected outcome of each game and then simultaniously adjusts players ratings according to the difference between actual results and the expectations.
@@ -107,9 +108,7 @@ If they meet again in two weeks or later, no penalty will be imposed any more, r
 
 All major ranking games have full impact on ratings, no matter how often they are played.
 
-### Official ratings
-
-Reliability serves as an indicator for player *official status*.
+### <a name="official"></a>Official status
 
 Player's rating is said to be *official* if the reliability is positive, and *unofficial* otherwise.
 
