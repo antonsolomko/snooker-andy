@@ -140,6 +140,7 @@ Score | Probability
 ## Examples
 
 #### Example 1. 
+![](img/Example1m.jpg)
 **A.B.** is a new player playing his first ever game. 
 His initial rating is 1500 and the system knows nothing about his real strenghs yet (reliability -1). 
 He wins a friendly (minor ranking) match 4-1 against **D.M.**, whose rating 1759 is more trustworthy (reliability 0.35). 
