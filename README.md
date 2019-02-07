@@ -234,9 +234,9 @@ It does not distinguish deciding frames, tournament finals etc.
 This is because we believe that, no matter how important game you win, the outcome depends on your skills very much like any other frame, rather that your will to win (unfortunately, we cannot measure players psychological state yet).
 The only way to tell that one game is more important than another is to nominate it *major ranking*, not *minor ranking*, in which case rating changes will be simply twice bigger.
 
-#### I regularly make big breaks and last month I won the biggest trophy. Doesn't it mean I should be number one in ranking?
+#### I regularly make big breaks and recently won a big tournament. Doesn't it mean I should be number one in ranking?
 
-No, I does not. No matter how big breaks you make or what other achievements you have, as long as you don't win games consistently your rating may be low.
+No, I doesn't. No matter how big breaks you make or what other achievements you have, as long as you don't win consistently your rating may be low.
 
 ## Credits
 The rating system was inspired by *Gerardo Calzerano*, designed by *Anton Solomko* and implemented by *Anton Solomko* and *Luca Gherardi*.
