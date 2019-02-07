@@ -128,7 +128,7 @@ Score | Probability
 1-3 |14%
 0-3 |8%
 
-### Examples
+## Examples
 
 #### Example 1. 
 **A.B.** is a new player playing his first ever game. 
