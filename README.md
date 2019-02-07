@@ -97,18 +97,20 @@ Club official ranking is updated weekly based on Monday ratings.
 
 #### Remarks
 
-* Rating changes depend on the score. Winning a match 3-2 or 3-0 makes a difference.
+* Rating changes depend on the score, not on a match result. Winning a match 3-0 or 3-2 makes a difference.
 
-* Victory over a strong opponent (whose rating is high) costs more than victory over a weak player.
-Similarly, loosing to a lower rated player will cause heavier rating drop than loosing to a stronger one.
+* Victory over a high rated player costs more than victory over a low rated player.
+Similarly, Loss to a low rated player costs more than loss to a high rated player.
 
-* A weak player may still get rating points if he looses a match to a strong opponent but manages to win few frames (the winner will lose rating points in that case).
+* A low rated player may *earn* rating points, even losing a match to a stronger opponent, if he manages to win few frames (the winner will lose rating points in that case).
 
-* Rating changes for two opponents are not symmetric in general (but are always opposite).
+* Rating changes for two opponents are *not symmetric* in general (but are always opposite).
 They depend on players reliabilities.
 Low reliability results in high rating volatility, because in that case the rating is considered to be less precise and the system tries more adjustment, while high reliability means that the system is confident in the rating accuracy and only makes little changes.
 
-* The system has weak memory: althoug all past games have some influence on the ratings, current ratings depend heavily on recent games and only slightly on games played long time ago.
+* Rating increments are *not additive*: number of points obtained for each frame in a series of games played the same day is slightly smaller than the number of points for a single frame.
+
+* The system has *weak memory*: although all past games have some influence on the ratings, current ratings depend heavily on recent games and only slightly on games played long time ago.
 (Assuming that players play regularly, of course. Ratings of players who stopped playing at all are frozen.)
 
 ### Examples
