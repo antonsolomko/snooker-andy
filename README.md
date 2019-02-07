@@ -162,12 +162,13 @@ If it was a *minor* ranking game instead, the players would get twice less, +9 a
 ## Web interface
 
 AndyScorer website provides various detailed rating reports.
+Chronological data in most reports are ordered from recent to past.
 
 ### Ratings
 Ratings for a selected day (today by default)
 ![alt text](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/snk_rating_1549395708.jpg?79537)\
 with the following columns:
-* *Position*. Please note that even though rounded rating values may sometimes coincide, the reaal values are almost surely different from each other, thus one position is never shared by more than one player (this is different from the previous version).
+* *Position*. Please note that even though rounded rating values may sometimes coincide, the real values are almost surely different from each other, thus one position is never shared by more than one player.
 * *Player name*.
 * *Rating* for a given day (based on all games played before that day).
 * Last rating *change* for each player.
