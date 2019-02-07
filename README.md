@@ -198,16 +198,15 @@ Keep playing and you get your official status soon.
 
 #### What happens to my rating if I don't play for some time?
 
-Rating value itself will not change, but reliability will go down until eventually it hits 0 and your rating becomes *unofficial*.
-In that case you will need to play some number of games before appearing at the official ranking again.
+Rating value itself will not change, but reliability will go down until eventually it hits 0 and then your rating becomes *unofficial*.
+In that case you will need to play some number of games to return your official status.
 
 #### Will I get additional rating points for winning a match / a deciding frame / a tournament?
 
-No, the system only cares about frames on scoreboard and treats them all equally.
-It does not distinguish deciding frames, tournament stages etc.
-The amount of rating points you get depends only on the frames scored.
-We believe that a player 
-The only way to tell that one game is more important than another is to nominate it *major ranking* not *minor ranking*, in which case rating changes will be twice bigger.
+No, the system only cares about frames on a scoreboard and treats them all equally (apart from major/minor type).
+It does not distinguish deciding frames, tournament finals etc.
+This is because we believe that, no matter how important game you win, the outcome depends on your skills very much like any other frame, rather that your will to win (unfortunately, we cannot measure players psychological state yet).
+The only way to tell that one game is more important than another is to nominate it *major ranking*, not *minor ranking*, in which case rating changes will be simply twice bigger.
 
 #### I regularly make big breaks and last month I won the biggest trophy. Doesn't it mean I should be number one in ranking?
 
