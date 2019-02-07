@@ -121,7 +121,7 @@ His initial rating is 1500 and the system knows nothing about his real strenghs 
 He wins a friendly (minor ranking) match 4-2 against **A.B.**, whose rating 1785 is more trustworthy (reliability 0.51). 
 As the next day report reveals, **M.L.** gains +125	rating points, while **A.B.** only looses -9. 
 Defeating a player with a fairly precise rating of 1785 is a reasonable evidence that **M.L.**'s strength is probably much higher than 1500. **A.B.**'s rating should decrease by a smaller amount, because his rating is already precisely measured to be near 1785, and he lost to a player whose rating cannot be trusted, therefore little information about **A.B.**'s playing strength has been learned from that match.
-New reliabilities of the two players are -0.27 and 0.54, respectively.
+New reliabilities of the two players are -0.27 (unofficial) and 0.54, respectively.
 ![drawing](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/snk_rating_1549541538.jpg?18906)
 
 #### Example 2. 
