@@ -52,7 +52,7 @@ This is the key factor: more "unexpected" outcomes result in bigger rating chang
 
 * *Raliabilities*. 
 If raliability is high, rating changes will be small (if the system is already confident in player skills, information provided by just one frame will not be enough to change rating much).
-On the contrary, low reliability leads to big changes in the rating value (information obtained from every frame will be perceptible compared to what the system already knows, thus it will try a bolder rating tuning).
+On the contrary, low reliability leads to big volatility of the rating (information obtained from every frame will be perceptible compared to what the system already knows, thus it will try a bolder rating tuning).
 Difference in the opponents reliabilities also plays some role.
 
 #### Types of games
