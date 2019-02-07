@@ -116,13 +116,13 @@ Club official ranking is updated weekly based on Monday ratings.
 ### Examples
 
 #### Example 1. 
-![alt text](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/2000396_match_facts.jpg?1549464833)\
-**A** is a new player playing his first ever game. 
-His initial rating is 1500 and the system knows nothing about his real strenghs yet. 
-He wins a minor ranking match 4-1 against **B**, whose rating 1745 is more trustworthy. 
-**A** gains +247 rating points, while **B** only looses -46. 
-Defeating a player with a fairly precise rating of 1743 is reasonable evidence that **A**'s strength is probably much higher than 1500. **B**'s rating should decrease by a smaller amount, because his rating is already precisely measured to be near 1745, and he lost to a player whose rating cannot be trusted, therefore little information about **B**'s playing strength has been learned from that match.
-New ratings appear on the following day.
+**M.L.** is a new player playing his first ever game. 
+His initial rating is 1500 and the system knows nothing about his real strenghs yet (reliability -1). 
+He wins a friendly (minor ranking) game 4-2 against **A.B.**, whose rating 1785 is more trustworthy (reliability 0.51). 
+As the next day report reveals, **M.L.** gains +125	rating points, while **A.B.** only looses -9. 
+Defeating a player with a fairly precise rating of 1785 is a reasonable evidence that **M.L.**'s strength is probably much higher than 1500. **A.B.**'s rating should decrease by a smaller amount, because his rating is already precisely measured to be near 1785, and he lost to a player whose rating cannot be trusted, therefore little information about **A.B.**'s playing strength has been learned from that match.
+New reliabilities of the two players are -0.27 and 0.54, respectively.
+![alt text](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/snk_rating_1549541538.jpg?18906)
 
 #### Example 2. 
 **A**'s rating is 1788, **B**'s rating is 1652 and more reliable.
