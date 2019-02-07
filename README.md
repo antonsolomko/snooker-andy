@@ -32,7 +32,7 @@ Reliability serves as an indicator for player [official status](#official).
 
 Both numbers (rating and reliability) are updated *daily* based on all [ranked games](#games) played the day before.
 The system estimates an expected outcome of each game and then simultaniously adjusts the ratings according to the difference between actual results and the expectations.
-Updated ratings can be seen the *next day* after the games took place.
+Updated ratings appear the *next day* after the games took place.
 If player does not play ranked games, his rating value remains unchanged.
 
 Reliability changes every day (regardless of player activity) in two alternative ways:
