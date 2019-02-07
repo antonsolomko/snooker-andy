@@ -181,7 +181,7 @@ Record of all rating and ranking changes for a selected player:
 
 ## F.A.Q.
 
-#### I have won the match. Why has my rating dropped?**
+#### I have won the match. Why has my rating dropped?
 
 Changes in ratings depend on the score (3-0 and 3-2 will result in different changes), as well as on the players ratings prior to the game. 
 Imagine your rating is 100, and Ronnie O'Sullivan's rating is 3000, and you loose 10-9. Then the system will conclude that probably you are not so bad and he is not so good, and adjust the ratings accordingly.
@@ -189,12 +189,6 @@ You are guaranteed to get raning points only if you:
 * whitewash your opponent, or
 * win (with any score) against a stronger opponent.
 Otherwice make sure that you don't loose too many frames.
-
-#### Will I get rating points for winning a match?
-
-No, the system does not see such a thing as match at all, it only cares about frames.
-The number of rating points you get depends on the frames scored, not a match result.
-Basically, playing two matches 2-1 or one 4-2 will have exactly the same effect, as long as these matches are of the same type (minor or major).
 
 #### When will I get an official rating?
 
@@ -206,6 +200,18 @@ Keep playing and you get your official status soon.
 
 Rating value itself will not change, but reliability will go down until eventually it hits 0 and your rating becomes *unofficial*.
 In that case you will need to play some number of games before appearing at the official ranking again.
+
+#### Will I get additional rating points for winning a match / a deciding frame / a tournament?
+
+No, the system only cares about frames on scoreboard and treats them all equally.
+It does not distinguish deciding frames, tournament stages etc.
+The amount of rating points you get depends only on the frames scored.
+We believe that a player 
+The only way to tell that one game is more important than another is to nominate it *major ranking* not *minor ranking*, in which case rating changes will be twice bigger.
+
+#### I regularly make big breaks and last month I won the biggest trophy. Doesn't it mean I should be number one in ranking?
+
+No, I does not. No matter how big breaks you make or what other achievements you have, as long as you don't win games consistently your rating may be low.
 
 ## Credits
 The rating system was inspired by *Gerardo Calzerano*, designed by *Anton Solomko* and implemented by *Anton Solomko* and *Luca Gherardi*.
