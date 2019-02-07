@@ -50,7 +50,8 @@ This is the key factor: more "unexpected" outcomes result in bigger rating chang
 | High | Low | **A** (expected) | A gets few points, B loses few points |
 | High | Low | **B** (unexpected) | A loses many point, B gets many points |
 
-2. *Raliabilities*. 
+2. *Raliability*. 
+Rating changes also depend on players reliavility.
 If raliability is high, rating changes will be small (if the system is already confident in player skills, information provided by just one frame will not be enough to change rating much).
 On the contrary, low reliability leads to big volatility of the rating (information obtained from every frame will be perceptible compared to what the system already knows, thus it will try a bolder rating tuning).
 Difference in the opponents reliabilities also plays some role.
