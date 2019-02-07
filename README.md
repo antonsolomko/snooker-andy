@@ -30,8 +30,8 @@ The higher the reliability is, the more accurate the rating is considered to be.
 (Reliability 1 would mean that the system is 100% sure in player's strength, although this level of confidence can never be achieved.)
 Reliability serves as an indicator for player [official status](#official).
 
-Both numbers (rating and reliability) are updated *daily* based on all ranked games played the day before.
-The system estimates an expected outcome of each game and then simultaniously adjusts players ratings according to the difference between actual results and the expectations.
+Both numbers (rating and reliability) are updated *daily* based on all [ranked games](#games) played the day before.
+The system estimates an expected outcome of each game and then simultaniously adjusts the ratings according to the difference between actual results and the expectations.
 Updated ratings can be seen the *next day* after the games took place.
 If player does not play ranked games, his rating value remains unchanged.
 
@@ -74,7 +74,7 @@ Furthermore, when playing against many opponents the same day, the resulting rat
 * The system has *weak memory*: although all past games have some influence on the ratings, current ratings depend heavily on recent games and only slightly on games played long time ago.
 (Assuming that players play regularly, of course. Ratings of players who stopped playing at all are frozen.)
 
-### Types of games
+### <a name="games"></a>Types of games
 
 There are three types of games, depending on their importance and effect on ratings:
 
