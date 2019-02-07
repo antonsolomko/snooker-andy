@@ -117,7 +117,7 @@ Club official ranking is updated weekly based on Monday ratings.
 ## Probabilistic interpretation
 
 Since the model under consideration is stochastic, knowing the ratings of two players it allows to estimate the *probability* for each of them to win a single frame and hence a match.
-For example, between players whose ratings are 1700 and 1650 (provided they are equally reliable) the stronger one would win a frame with probability 62% and the distribution of possible match outcomes for a "best of 5 frames" match would be:
+For example, between players whose ratings are 1700 and 1650 (provided they are equally reliable) the stronger player would win a frame with probability 62% and the distribution of possible outcomes for a match "best of 5 frames" would be:
 
 Score | Probability
 :--:|:--:
