@@ -3,7 +3,7 @@
 ## Overview
 
 The Andy rating system was designed for the [AndyScorer](http://snooker.andyscorer.org) web service to evaluate players skills in the game of [snooker](en.wikipedia.org/wiki/Snooker). 
-It is based on [Glicko](http://www.glicko.net/glicko.html) rating system with minor modifications and treats players strength as their ability to win individual frames.
+It is based on [Glicko](http://www.glicko.net/glicko.html) rating system with minor modifications and views players strength as their ability to win individual frames.
 
 In our model, like in glicko, we assume that player strength is a [normally distributed random variable](https://en.wikipedia.org/wiki/Normal_distribution).
 Parameters of the distributions (mean and variance) are reestimated periodically based on games outcomes.
