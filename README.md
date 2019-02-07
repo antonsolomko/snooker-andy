@@ -127,12 +127,11 @@ New reliabilities of the two players are -0.3 (unofficial) and 0.4, respectively
 #### Example 2.
 ![drawing](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/2000546_match_facts.jpg?1549549256)
 
-At the day of a game **A.S.**'s rating is 1858 (reliability 0.48), **P.DM.**'s rating is 1684 and more reliable (0.7).
-**A.S.** wins a major ranking match 3-2 (the only game played by both players that day).
-**A.S.**'s new rating next day is 1830 (-28), while **P.DM.**'s new rating is 1701 (+17).
-Even though **A.S.** has won the match, the system thinks that the result 3-2 was closer then 1858 vs 1684, therefore adds +17 points to **P.DM.**'s rating, while decreasing **A.S.**'s rating by -28 points.
-(If it was not a *minor* ranking game, the players would get twice less, +9 and -14 points, respectively.)
-Both players reliabilities grow after the game to 0.6 and 0.74, respectively.
+**A.S.**'s rating is 1858 (reliability 0.48), **P.DM.**'s rating is 1684 and more reliable (0.7).
+**A.S.** wins a major ranking match 3-2 (the only game both players had that day).
+**A.S.**'s new rating is 1830 (-28), while **P.DM.**'s one is 1701 (+17).
+Even though **A.S.** has won the match, the system thinks that the result 3-2 was closer then 1858 vs 1684, therefore adds +17 points to **P.DM.**, and subtracts 28 points from **A.S.** (notice that the less reliable rating changes more).
+If it was a *minor* ranking game instead, the players would get twice less, +9 and -14 points, respectively.
 ![drawing](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/snk_rating_1549549928.jpg?3261)
 
 
