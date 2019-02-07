@@ -183,8 +183,10 @@ Record of all rating and ranking changes for a selected player:
 
 #### I have won the match. Why has my rating dropped?
 
-Changes in ratings depend on the score (3-0 and 3-2 will result in different changes), as well as on the players ratings prior to the game. 
-Imagine your rating is 100, and Ronnie O'Sullivan's rating is 3000, and you loose 10-9. Then the system will conclude that probably you are not so bad and he is not so good, and adjust the ratings accordingly.
+Rating changes depend on the score (3-0 and 3-2 will have different effects), as well as on the players ratings prior to the game. 
+
+Imagine your rating is 100, and Ronnie O'Sullivan's rating is 3000, and you loose 9-10. Evet though you lost the match, the system will conclude that probably you are not so bad and he is not so good, and adjust the ratings accordingly.
+
 You are only guaranteed to get raning points if you:
 * whitewash your opponent, or
 * win (with any score) against a stronger opponent.
