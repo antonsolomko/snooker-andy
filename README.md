@@ -55,7 +55,7 @@ If raliability is high, rating changes will be small (because if the system is a
 On the contrary, low reliability leads to big volatility of the rating (information obtained from every frame will be perceptible compared to what the system already knows, thus it will try a bolder rating tuning).
 Difference in the opponents reliabilities also plays some role.
 
-#### Remarks
+### Remarks
 
 * Rating changes depend on the *score*, not on a match result. Winning a match 3-0 or 3-2 makes an (essential) difference.
 
@@ -73,7 +73,7 @@ Furthermore, when playing against many opponents the same day, the resulting rat
 * The system has *weak memory*: although all past games have some influence on the ratings, current ratings depend heavily on recent games and only slightly on games played long time ago.
 (Assuming that players play regularly, of course. Ratings of players who stopped playing at all are frozen.)
 
-#### Types of games
+### Types of games
 
 There are three types of games, depending on their importance and effect on ratings:
 
@@ -90,28 +90,37 @@ Under normal circumstances, it is recommended to give preference to this type of
 * **Non ranking** games do not affect ratings at all. 
 This type should be only used if players do not try to win or play not as they would normally do, so that the outcome does not adequately represent their real abilities.
 
-#### Guest players
+### Guest players
 
-Players that are not members of an academy ("guest" players) are not ranked.
-Any games where unranked players take part do not affect ratings.
+Players that are not members of an academy ("guests") are not ranked.
+If one of the two opponents is not ranked, the game does not affect ratings.
 
-#### Frequecy restriction
+### Frequecy restriction
 
-If two players play with each other too often (more than once in two weeks), their minor ranking games impact gets additional "discount factor" inversely proportional to the number of games played within the past 14 days.
+If two players meet too often (more than once in *2 weeks*), their minor ranking games have smaller impact on ratings.
+Namely, these games are counted with an additional "discount factor" equal to the inverse number of days played together within past 14 days.
 
-#### Official ratings
+For example, if two friends play with each other 3 days in a row, the games of the first day will be counted as normal minor ranking games.
+The games played the second day will have twice smaller impact on ratings (2nd day, coefficient 1/2).
+Any games played between these two during the third day will be counted with coefficient 1/3, and so on.
+If they meet again in two weeks or later, no penalty will be imposed any more, ranked game will be counted as usual.
 
-Reliability serves as an indicator for the players official/unofficial status. 
+All major ranking games have full impact on ratings, no matter how often they are played.
 
-Rating is considered to be *official* if the reliability is positive, and *unofficial* otherwise.
-This means that newcomers ratings are initially not official and become official only after they play certain number of games (typically around 20).
+### Official ratings
 
-Similarly, since reliability constantly decreases with the passage of time, ratings of players who do not play for a while sooner or later (no more than in 120 days) become *unofficial*.
+Reliability serves as an indicator for player *official status*.
+
+Player's rating is said to be *official* if the reliability is positive, and *unofficial* otherwise.
+
+This means that new players initially get unofficial ratings (default reliability is -1), and obtain official status only after they play some number of games (typically around 20), which is enough for their rating to stabilize near its true value.
+
+Since reliability of inactive players constantly decreases with the passage of time, ratings of those who do not play for a while sooner or later (no more than in 120 days) become *unofficial*.
 If that happens, they need to play certain number of gamse to confirm their level, before returning the official status.
 
-#### Official rankings
+### Official ranking
 
-Club official ranking is updated weekly based on Monday ratings.
+Club official ranking is updated once a week based on Monday official ratings.
 
 
 ## Probabilistic interpretation
