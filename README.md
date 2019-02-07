@@ -93,8 +93,8 @@ This type should be only used if players do not try to win or play not as they w
 
 ### Guest players
 
-Players that are not members of an academy ("guests") are not ranked.
-If one of the two opponents is not ranked, the game does not affect ratings.
+Players that are not affiliated with an academy ("guests") are not ranked.
+Games with such players are ignoged by the rating system.
 
 ### Frequecy restriction
 
