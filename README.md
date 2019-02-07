@@ -185,9 +185,10 @@ Record of all rating and ranking changes for a selected player:
 
 Changes in ratings depend on the score (3-0 and 3-2 will result in different changes), as well as on the players ratings prior to the game. 
 Imagine your rating is 100, and Ronnie O'Sullivan's rating is 3000, and you loose 10-9. Then the system will conclude that probably you are not so bad and he is not so good, and adjust the ratings accordingly.
-You are guaranteed to get raning points only if you:
+You are only guaranteed to get raning points if you:
 * whitewash your opponent, or
-* win (with any score) against a stronger opponent.\
+* win (with any score) against a stronger opponent.
+
 Otherwice make sure that you don't lose too many frames to rabbits.
 
 #### When will I get an official rating?
