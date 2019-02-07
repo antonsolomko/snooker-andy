@@ -101,7 +101,7 @@ If two players meet too often (more than once in *2 weeks*), their minor ranking
 Namely, these games are counted with an additional "discount factor" equal to the inverse number of days played together within past 14 days.
 
 For example, if two friends play with each other 3 days in a row, the games of the first day will be counted as normal minor ranking games.
-The games played the second day will have twice smaller impact on ratings (2nd day, coefficient 1/2).
+The games played the second day will have twice smaller impact on ratings (coefficient 1/2).
 Any games played between these two during the third day will be counted with coefficient 1/3, and so on.
 If they meet again in two weeks or later, no penalty will be imposed any more, ranked game will be counted as usual.
 
