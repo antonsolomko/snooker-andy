@@ -42,7 +42,7 @@ Reliability drops to its minimum in no more than 2 years.
 
 For every frame won/lost players obtain/lose rating points.
 The number of points depends on two factors:
-* *Difference between opponents ratings prior to the game*. 
+* *Difference between opponents ratings* prior to the game. 
 This is the key factor: more "unexpected" outcomes result in bigger rating changes.
 
 | Player A rating | Player B rating | Frame winner | Resulting rating change |
