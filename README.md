@@ -65,8 +65,7 @@ Similarly, loss to a low rated player costs more than loss to a high rated playe
 * A low rated player may *earn* rating points, even when losing a match to a stronger opponent, if he manages to win few frames (the winner will lose rating points in that case).
 
 * Rating changes for two opponents are *not symmetric* in general (but are always opposite).
-They depend on players reliabilities.
-Low reliability results in high rating volatility, while high reliability requires only small changes.
+They depend on players reliabilities: low reliability results in high rating volatility, while high reliability requires only small changes.
 
 * Rating increments are *not additive*: number of points obtained for each frame in a series of games played the same day is slightly smaller than the number of points for a single frame.
 
