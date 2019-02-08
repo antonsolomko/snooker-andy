@@ -221,9 +221,9 @@ Complete record of all rating and ranking changes for a selected player:
 
 Rating changes depend on the score (3-0 and 3-2 will have different effects), as well as on the players ratings prior to the game. 
 
-Imagine your rating is 100, and Ronnie O'Sullivan's rating is 3000, and you lose 9-10. Evet though you lost the match, the system will conclude that probably you are not so bad and he is not so good, and adjust the ratings accordingly.
+Imagine your rating is 100, and Ronnie O'Sullivan's rating is 3000, and you lose 9-10. Even though you lost the match, the system will conclude that probably you are not so bad and he is not so good, and adjust the ratings accordingly.
 
-You are only guaranteed to get raning points if you:
+You are only guaranteed to get rating points if you:
 * whitewash your opponent, or
 * win (with any score) against a stronger opponent.
 
