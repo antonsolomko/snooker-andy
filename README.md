@@ -40,7 +40,7 @@ Reliability changes every day (regardless of player activity) in two alternative
 That is, the more you play, the more trustworthy your rating is.
 The increment depends on many factors.
 * When not playing, reliability *decreases* with the passage of time (by 0.008(3) every day), i.e. any period of inactivity results in increased uncertainty about player skills.
-If one stops playing completely, reliability drops to its minimum (-1) in no more than 2 years.
+If one stops playing completely, reliability drops to its minimum (-1) in at most 2 years.
 
 For every ranked frame players obtain or lose rating points.
 The number of points depends on two factors:
