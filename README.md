@@ -227,7 +227,7 @@ You are only guaranteed to get rating points if you:
 * whitewash your opponent, or
 * win (with any score) against a stronger opponent.
 
-Otherwise make sure that you don't lose too many frames to rabbits.
+Otherwise make sure that you don't lose too many frames to losers.
 
 #### When will I get an official rating?
 
