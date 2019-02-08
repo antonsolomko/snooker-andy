@@ -12,7 +12,7 @@ The model relies on the following assumptions:
 * players try to win every frame,
 * frames outcomes are independent of each other.
 
-Only *count of frames* won or lost determines the resulting ratings.
+Only *count of frames* (won or lost) determines the resulting ratings.
 Any other factors, such as match outcome, points scored, breaks made, tournament stage etc, are not taken into account.
 
 ## Description
@@ -23,126 +23,135 @@ To each player two numbers are assigned:
 Represents player's strength (ability to win frames).
 Initial rating for a new player is 1500.
 
-* **Reliability** (rescaled version of variance).
+* **Reliability** of player rating (rescaled version of variance).
 An auxiliary parameter that represents the system's confidence in player rating estimate.
 Reliability varies from -1 (default for new players) to 1. 
-The higher the reliability is, the more accurate the rating is considered to be. 
+The higher the reliability, the more accurate the rating is.
 (Reliability 1 would mean that the system is 100% sure in player's strength, although this level of confidence can never be achieved.)
 Reliability serves as an indicator for player [official status](#official).
 
 Both numbers (rating and reliability) are updated *daily* based on all [ranked games](#games) played the day before.
-The system estimates an expected outcome of each game and then simultaniously adjusts the ratings according to the difference between actual results and the expectations.
+The system estimates an expected outcome of each game and then simultaneously adjusts the ratings according to the difference between actual results and the expectations.
 Updated ratings appear the *next day* after the games took place.
 If player does not play ranked games, his rating value remains unchanged.
 
 Reliability changes every day (regardless of player activity) in two alternative ways:
-* Whenever ranked games are played, reliability grows (the increment depends on many factors).
+* Whenever ranked games are played, reliability *grows*.
 That is, the more you play, the more trustworthy your rating is.
-* When not playing, reliability decreases with the passage of time (by 0.008(3) every day), i.e. any absence period results in uncertanty.
-Reliability drops to its minimum in no more than 2 years.
+The increment depends on many factors.
+* When not playing, reliability *decreases* with the passage of time (by 0.008(3) every day), i.e. any period of inactivity results in increased uncertainty about player skills.
+If one stops playing completely, reliability drops to its minimum (-1) in no more than 2 years.
 
-Roughly speaking, for every ranked frame players obtain or lose rating points.
+For every ranked frame players obtain or lose rating points.
 The number of points depends on two factors:
 1. *Difference between opponents ratings* prior to the game. 
 This is the key factor: more "unexpected" outcomes result in bigger rating changes:
 
-| Player A rating | Player B rating | Frame winner | Resulting rating change |
-| :---------------: | :-----------------: | :-------: | :-----------------------: |
-| High | Low | **A** (expected) | A gets few points, B loses few points |
-| High | Low | **B** (unexpected) | A loses many point, B gets many points |
+| Player A rating | Player B rating | Frame winner       | Resulting rating change                |
+| :-------------: | :-------------: | :----------------: | :------------------------------------: |
+| High            | Low             | **A** (expected)   | A gets few points, B loses few points  |
+| High            | Low             | **B** (unexpected) | A loses many point, B gets many points |
 
-2. *Raliability*.
-If raliability is high, rating changes will be small (because if the system is already confident in player skills, one frame will not give enough evidence for changing rating much).
-On the contrary, low reliability leads to big volatility of the rating (information obtained from every frame will be perceptible compared to what the system already knows, thus it will try a bolder rating tuning).
+2. *Reliability*.
+If reliability is high, rating changes will be small (because the system is already confident in player skills, one frame will not give enough evidence for changing rating much).
+On the contrary, low reliability leads to high rating volatility (information obtained from every frame will be perceptible compared to what the system already knows, thus it will try a bolder rating tuning).
 Difference in the opponents reliabilities also plays some role.
 
-### Remarks
+### Key features
 
-* Rating changes depend on the *score*, not on a match result. Winning a match 3-0 or 3-2 makes an (essential) difference.
+* Rating changes depend on the *score*, not on a match result.
+Winning a match 3-0 or 3-2 makes an essential difference.
 
 * Victory over a high rated player costs more than victory over a low rated player.
 Similarly, loss to a low rated player costs more than loss to a high rated player.
 
 * A low rated player may *earn* rating points, even when losing a match to a stronger opponent, if he manages to win few frames (the winner will lose rating points in that case).
+For example, playing with a stronger opponent, one may lose -5 points for each frame lost, and gain +23 for a frame won.
+Then 1-3 loss in a match will still give the loser additional 23 - 3*5 = +8 rating points.
 
 * Rating changes for two opponents are *not symmetric* in general (but are always opposite).
-They depend on opponents reliabilities: rating with lower reliability will vary more.
+They depend on opponents reliabilities: ratings with lower reliability vary more.
 
 * Rating increments are *not additive*: number of points obtained for each frame in a series of games played the same day is slightly smaller than the number of points for a single frame alone.
-Furthermore, when playing against many opponents the same day, the resulting rating change is composite of single frames, but not reduced to their sum.
+Furthermore, when playing against several opponents the same day, the resulting rating change is composite of individual frames, but not reduced to their arithmetic sum.
 
 * The system has *weak memory*: although all past games have some influence on the ratings, current ratings depend heavily on recent games and only slightly on games played long time ago.
-(Assuming that players play regularly, of course. Ratings of players who stopped playing at all are frozen.)
+(Assuming that players play regularly, of course. Ratings of players who stopped playing are frozen.)
+
 
 ### <a name="games"></a>Types of games
 
-There are three types of games, depending on their importance and effect on ratings:
+There are three types of games, depending on their importance and influence on ratings:
 
-* **Major ranking** games have full impact on ratings. 
-It is assumed that the result of such game is important and thus both opponents do their best to win every frame. 
+1. **Major ranking** games have full impact on ratings. 
+It is assumed that these games are important in some sense and hence both opponents do their best to win every frame. 
 Most tournaments are major ranking.
 
-* **Minor ranking** games have twice smaller effect on ratings than major ranking games.
-All rating changes caused by minor ranking games are "discounted" by half. 
-In other words, winning two *minor* frames have the same effect on ratings than winning one *major* frame.
+1/2. **Minor ranking** games have twice smaller effect on ratings compared to major ranking games.
+Any rating changes caused by minor ranking games are "amortized" or "discounted" by half.
+In other words, winning two *minor* frames have the same effect as winning one *major* frame.
 Friendly matches as well as some small tournaments are minor ranking events. 
 Under normal circumstances, it is recommended to give preference to this type of games, as long as players try to win.
 
-* **Non ranking** games do not affect ratings at all. 
+0. **Non ranking** games do not affect ratings at all. 
 This type should be only used if players do not try to win or play not as they would normally do, so that the outcome does not adequately represent their real abilities.
+
 
 ### Guest players
 
 Players that are not affiliated with an academy ("guests") are not ranked.
-Games with such players are ignoged by the rating system.
+Games with such players are ignored by the rating system.
 
-### Frequecy restriction
 
-If two players meet too often (more than once in *2 weeks*), their minor ranking games have smaller impact on ratings.
-Namely, these games are counted with an additional "discount factor" equal to the inverse number of days played together within past 14 days.
+### Frequency restriction
+
+If two players meet too often (more than *once in 2 weeks*), their minor ranking games have smaller impact on ratings.
+Namely, these games are counted with an additional "amortizing factor" equal to the inverse number of days they played together within the past 14 days.
 
 For example, if two friends play with each other 3 days in a row, the games of the first day will be counted as normal minor ranking games.
-The games played the second day will have twice smaller impact on ratings (coefficient 1/2).
+The games played the second day will have twice smaller impact on ratings (coefficient 1/2, or 1/4 compared to a major ranking game).
 Any games played between these two during the third day will be counted with coefficient 1/3, and so on.
-If they meet again in two weeks or later, no penalty will be imposed any more, ranked game will be counted as usual.
+If they meet again in two weeks or later, no frequency penalty will be imposed any more and ranked game will be counted as usual.
 
 All major ranking games have full impact on ratings, no matter how often they are played.
 
+
 ### <a name="official"></a>Official status
 
-Player's rating is said to be *official* if the reliability is positive, and *unofficial* otherwise.
+Player's rating is **official** if the reliability is positive, and **unofficial** otherwise.
 
-This means that new players initially get unofficial ratings (default reliability is -1), and obtain official status only after they have played some number of games (typically around 20, enough for the rating to stabilize near its real value).
+This means that new players initially get unofficial ratings (default reliability is -1), and obtain official status only after they complete some number of ranked games (typically around 20 frames played with 5 different opponents, enough for the rating to stabilize near its real value).
 
-Since reliability of inactive players constantly decreases with the passage of time, ratings of those who do not play for a while sooner or later (but no more than in 120 days) become *unofficial*.
-If that happens, they need to play certain number of gamse to confirm their level, before they can return their official status.
+Since reliability of inactive players constantly decreases with the passage of time, ratings of those players, who do not play for a while, sooner or later (but no more than in 120 days) become *unofficial*.
+If that happens, they need to play certain number of games to confirm their level, before they return their official status.
 
 ### Club ranking
 
-Club official ranking is updated once a week based on Monday ratings.
+Club official ranking is updated once a week and is based on Monday ratings.
 Players whose rating is unofficial stay unranked.
 
 
 ## Probabilistic interpretation
 
-Since the model under consideration is stochastic, knowing the ratings of two players it allows to estimate the *probability* for each of them to win a single frame and hence a match.
-For example, between players whose ratings are 1700 and 1650 (provided they are equally reliable) the stronger player would win a frame with probability 62% and the distribution of possible outcomes for a match "best of 5 frames" would be:
+Our model is stochastic: from games results it tries to estimate means and variances of normally distributed players skills.
+As a byproduct, it allows to predict outcomes of future games.
+Knowing the ratings of two opponents, one can estimate the *probability* for each of them to win a single frame, and hence a match.
+For example, for two players with ratings 1700 and 1650 (provided they are equally reliable), the stronger one would win a frame with probability 62% and the distribution of possible outcomes of a match "best of 5 frames" would be:
 
 Score | Probability
-:--:|:--:
-3-0 |18%
-3-1 |24%
-3-2 |20%
-2-3 |16%
-1-3 |14%
-0-3 |8%
+:----:|:-----------:
+ 3-0  | 18%
+ 3-1  | 24%
+ 3-2  | 20%
+ 2-3  | 16%
+ 1-3  | 14%
+ 0-3  | 8%
 
 ## Examples
 
 #### Example 1.
-![](img/Example1m.jpg)
 **A.B.** is a new player playing his first ever game. 
-His initial rating is 1500 and the system knows nothing about his real strenghs yet (reliability -1). 
+His initial rating is 1500 and the system knows nothing about his real strengths yet (reliability -1). 
 He wins a friendly (minor ranking) match 4-1 against **D.M.**, whose rating 1759 is more trustworthy (reliability 0.35). 
 As the next day report reveals, **A.B.** gains +413 rating points, while **D.M.** only looses -61. 
 Defeating a player with a fairly precise rating of 1759 is a reasonable evidence that **A.B.**'s strength is probably much higher than 1500. **D.M.**'s rating should decrease by a smaller amount, because his rating is already precisely measured to be near 1759, and he lost to a player whose rating cannot be trusted, therefore little information about **D.M.**'s playing strength has been learned from that match.
@@ -151,7 +160,6 @@ New reliabilities of the two players are -0.3 (unofficial) and 0.4, respectively
 ![](img/Example1.jpg)
 
 #### Example 2.
-![](img/Example2m.jpg)
 **A.S.**'s rating is 1858 (reliability 0.48), **P.DM.**'s rating is 1684 and more reliable (0.7).
 **A.S.** wins a major ranking match 3-2 (the only game both players had that day).
 **A.S.**'s new rating is 1830 (-28), while **P.DM.**'s one is 1701 (+17).
@@ -216,12 +224,12 @@ You are only guaranteed to get raning points if you:
 * whitewash your opponent, or
 * win (with any score) against a stronger opponent.
 
-Otherwice make sure that you don't lose too many frames to rabbits.
+Otherwise make sure that you don't lose too many frames to rabbits.
 
 #### When will I get an official rating?
 
 When reliability of your rating becomes positive.
-It usually takes about 20 frames to play with 5 different opponents, but precise number depents on the "quality" of you opponents, as well as some other factors.
+It usually takes about 20 frames to play with 5 different opponents, but precise number depends on the "quality" of you opponents, as well as some other factors.
 Keep playing and you get your official status soon.
 
 #### What happens to my rating if I don't play for some time?
