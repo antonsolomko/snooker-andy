@@ -20,10 +20,10 @@ Any other factors, such as match outcome, points scored, breaks made, tournament
 To each player two numbers are assigned:
 
 * **Rating**.
-Represents a player strength (ability to win frames).
+Represents a player's strength (ability to win frames).
 Initial rating for a new player is 1500.
 
-* **Reliability** of player rating (rescaled version of variance).
+* **Reliability** of a player's rating (rescaled version of variance).
 An auxiliary parameter that represents the system's confidence in player rating estimate.
 Reliability varies from -1 (default for new players) to 1. 
 The higher the reliability, the more accurate the rating is.
