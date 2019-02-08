@@ -147,6 +147,7 @@ Score | Probability
  1-3  | 14%
  0-3  | 8%
 
+
 ## Examples
 
 #### Example 1.
@@ -171,18 +172,17 @@ If it was a *minor* ranking game instead, the players would get twice less, +9 a
 
 ## Web interface
 
-AndyScorer website provides various detailed rating reports.
-Chronological data in most reports are ordered from recent to past.
+AndyScorer website provides various rating reports.
+Chronological data are typically ordered from recent to past.
 
 ### Ratings
-Ratings for a selected day (today by default)
 ![alt text](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/snk_rating_1549395708.jpg?79537)\
-with the following columns:
-* *Position*. Please note that even though rounded rating values may sometimes coincide, the real values are almost surely different from each other, thus one position is never shared by more than one player.
+This table shows ratings for a selected day (today by default) with the following columns:
+* *Position*. Please note that one position is never shared by two players, even if rounded ratings sometimes coincide. The real (not rounded) values are almost surely different from each other.
 * *Player name*.
 * *Rating* for a given day (based on all games played before that day).
-* Last rating *change* for each player.
-* *Day* when the last ranking game was played. Notice that this date is always strictly before the day for which the ratings were generated, so games played on 11/12/2017 will only appear in the next day report for 12/12/2017 with the corresponding rating changes.
+* Latest rating *change* for each player.
+* *Day* when the last ranking game was played.
 * Rating *reliability*.
 
 Only official ratings are shown by default.
@@ -190,9 +190,8 @@ Set the corresponding flag to see all ratings including unofficial ones:
 ![alt text](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/snk_rating_1549395796.jpg?38962)
 
 ### Official ranking
-Official club ranking (based on Monday ratings of the selected week, current week by default):
 ![alt text](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/official_rating.jpg?62134)\
-contains columns:
+Official club ranking table (based on Monday ratings of the selected week, current week by default) contains the columns:
 * *Position* (rank).
 * *Position change* since the last week.
 * *Player*.
