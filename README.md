@@ -170,7 +170,7 @@ If it was a *minor* ranking game instead, the players would get twice less, +9 a
 ![](img/Example2.jpg)
 
 
-## Web interface
+## Web reports
 
 [AndyScorer](http://snooker.andyscorer.org) website provides various rating reports.
 Chronological data are typically ordered from recent to past.
