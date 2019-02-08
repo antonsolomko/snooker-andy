@@ -249,7 +249,7 @@ The only way to tell that one game is more important than another is to nominate
 
 #### I regularly make big breaks and recently won a big tournament. Doesn't it mean I should be number one in ranking?
 
-No, I doesn't. No matter how big breaks you make or what other achievements you have, as long as you don't win consistently your rating may be low.
+No, it doesn't. No matter how big breaks you make or what other achievements you have, as long as you don't win consistently your rating may be low.
 
 ## Credits
 The rating system was inspired by *Gerardo Calzerano*, designed by *Anton Solomko* and implemented by *Anton Solomko* and *Luca Gherardi*.
