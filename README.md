@@ -83,17 +83,17 @@ Furthermore, when playing against several opponents the same day, the resulting 
 
 There are three types of games, depending on their importance and influence on ratings:
 
-1. **Major ranking** games have full impact on ratings. 
+* **Major ranking** games have full impact on ratings. 
 It is assumed that these games are important in some sense and hence both opponents do their best to win every frame. 
 Most tournaments are major ranking.
 
-1/2. **Minor ranking** games have twice smaller effect on ratings compared to major ranking games.
+* **Minor ranking** games have twice smaller effect on ratings compared to major ranking games.
 Any rating changes caused by minor ranking games are "amortized" or "discounted" by half.
 In other words, winning two *minor* frames have the same effect as winning one *major* frame.
 Friendly matches as well as some small tournaments are minor ranking events. 
 Under normal circumstances, it is recommended to give preference to this type of games, as long as players try to win.
 
-0. **Non ranking** games do not affect ratings at all. 
+* **Non ranking** games do not affect ratings at all. 
 This type should be only used if players do not try to win or play not as they would normally do, so that the outcome does not adequately represent their real abilities.
 
 
