@@ -191,7 +191,7 @@ Set the corresponding flag to see all ratings including unofficial ones:
 ![alt text](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/snk_rating_1549395796.jpg?38962)
 
 
-### Official rankings
+### Official ranking
 ![alt text](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/official_rating.jpg?62134)\
 Official club ranking table (based on Monday ratings of the selected week, current week by default) contains the columns:
 * *Position* (rank).
