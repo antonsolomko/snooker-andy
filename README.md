@@ -200,7 +200,7 @@ Official club ranking table (based on Monday ratings of the selected week, curre
 * *Rating*.
 
 Players whose rating is not official and who therefore are not ranked are listed in a separate table:
-![alt text](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/official_rating_off.jpg?86926)
+![alt text](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/official_rating_off.jpg?81410)
 
 
 ### Leaders
