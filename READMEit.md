@@ -136,105 +136,102 @@ Punteggio | Probabilità
 ## Esempi
 
 #### Example 1.
-**A.B.** is a new player playing his first ever game. 
-His initial rating is 1500 and the system knows nothing about his real strengths yet (reliability -1). 
-He wins a friendly (minor ranking) match 4-1 against **D.M.**, whose rating 1759 is more trustworthy (reliability 0.35). 
-As the next day report reveals, **A.B.** gains +413 rating points, while **D.M.** only looses -61. 
-Defeating a player with a fairly precise rating of 1759 is a reasonable evidence that **A.B.**'s strength is probably much higher than 1500. **D.M.**'s rating should decrease by a smaller amount, because his rating is already precisely measured to be near 1759, and he lost to a player whose rating cannot be trusted, therefore little information about **D.M.**'s playing strength has been learned from that match.
-New reliabilities of the two players are -0.3 (unofficial) and 0.4, respectively.
+**A.B.** è un nuovo giocatore che gioca la sua prima partita in assoluto. 
+Il suo punteggio iniziale è 1500 e il sistema non sa ancora nulla dei suoi veri punti di forza (affidabilità -1). 
+Vince una partita secondaria (minor ranking) 4-1 contro **D.M.**, la cui valutazione di 1759 punti è più affidabile (affidabilità 0,35). Come rivela il rapporto del giorno dopo, **A.B.** guadagna +413 punti di valutazione, mentre **D.M.** ne perde solo -61. 
+Sconfiggere un giocatore con un punteggio abbastanza preciso di 1759 è una prova ragionevole del fatto che la forza di **A.B.** è probabilmente molto più alta di 1500. 
+Il punteggio di **D.M.** dovrebbe diminuire di un importo inferiore perché il suo punteggio è già stato misurato con precisione per 1759 punti e perchè ha perso contro un giocatore il cui punteggio non può essere considerato attendibile, date le poche informazioni sulla forza di gioco di **D.M.** che sono state apprese dal sistema finora. 
+Le nuove affidabilità dei due giocatori sono rispettivamente di -0,3 (non ufficiale) e 0,4.
 
 ![](img/Example1.jpg)
 
 #### Example 2.
-**A.S.**'s rating is 1858 (reliability 0.48), **P.DM.**'s rating is 1684 and more reliable (0.7).
-**A.S.** wins a major ranking match 3-2 (the only game both players had that day).
-**A.S.**'s new rating is 1830 (-28), while **P.DM.**'s one is 1701 (+17).
-Even though **A.S.** has won the match, the system thinks that the result 3-2 was closer then 1858 vs 1684, thus adds +17 points to **P.DM.** and subtracts 28 points from **A.S.** (notice that the less reliable rating changes more).
-If it was a *minor* ranking game instead, the players would get twice less, +9 and -14 points, respectively.
+La valutazione di **A.S.** è 1858 (affidabilità 0,48) mentre la valutazione di **P.DM.** è 1684 ed più affidabile (0,7). 
+**A.S.** vince una partita principale (major ranking) 3-2 (l'unica partita che entrambi i giocatori hanno fatto in quella giornata). 
+Il nuovo rating di **A.S.** è 1830 (-28), mentre quello di **P.DM.** è 1701 (+17). 
+Anche se **A.S.** ha vinto la partita, il sistema pensa che il risultato 3-2 fosse più vicino di 1858 contro 1684, quindi aggiunge +17 punti a **P.DM.** e sottrae 28 punti da **A.S.** (da notare che la valutazione meno è affidabile più è soggetta a variazioni). 
+Se invece si fosse trattato di una partita classificata secondaria, i giocatori ottenevano la metà del punteggio, quindi, rispettivamente, +9 e -14 punti.
 
 ![](img/Example2.jpg)
 
 
-## Web reports
+## Web Reports
 
-[AndyScorer](http://snooker.andyscorer.org) website provides various rating reports.
-Chronological data are typically ordered from recent to past.
+L’applicazione web di [AndyScorer](http://snooker.andyscorer.org) fornisce vari report di valutazione. 
+I dati cronologici vengono generalmente ordinati dal recente al passato.
 
 
-### Ratings
+### Le valutazioni
 ![alt text](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/snk_rating_1549395708.jpg?79537)\
-This table shows ratings for a selected day (today by default) with the following columns:
-* *Position*. Please note that one position is never shared by two players, even if rounded ratings sometimes coincide. The real (not rounded) values are almost surely different from each other.
-* *Player name*.
-* *Rating* for a given day (based on all games played before that day).
-* Latest rating *change* for each player.
-* *Day* when the last ranking game was played.
-* Rating *reliability*.
+Questa tabella mostra le valutazioni per un giorno selezionato (di default la data impostata è quella odierna) con le seguenti colonne:
+* *Posizione*. Si tenga presente che una posizione non viene mai condivisa da due giocatori, anche se talvolta le valutazioni arrotondate coincidono. I valori reali (non arrotondati) sono quasi sicuramente diversi l'uno dall'altro.
+* *Nome* del giocatore.
+* *Valutazione* per un dato giorno (basato su tutte le partite giocate in precedenza).
+* Ultimo *cambio* di valutazione per ogni giocatore.
+* *Giorno* in cui è stata giocata l'ultima partita di classificata.
+* *Affidabilità* di valutazione.
 
-Only official ratings are shown by default.
-Set the corresponding flag to see all ratings including unofficial ones:
+Solo le valutazioni ufficiali sono mostrate in maniera predefinita. 
+Nel caso in cui si vogliano visualizzare anche le valutazioni non ufficiali si deve spuntare la bandiera corrispondente:
 ![alt text](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/snk_rating_1549395796.jpg?38962)
 
 
-### Official ranking
+### Classifica ufficiale
 ![alt text](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/official_rating.jpg?4929)\
-Official club ranking table (based on Monday ratings of the selected week, current week by default) contains the columns:
-* *Position* (rank).
-* *Position change* since the last week.
-* *Player*.
-* *Rating*.
+La classifica ufficiale del club (in base alle valutazioni del lunedì della settimana selezionata, la settimana visualizzata di default è quella corrente) contiene le seguenti colonne:
+* *Posizione* (classifica).
+* *Cambio di posizione* in classifica dall'ultima settimana.
+* *Giocatore*.
+* *Punteggio*.
 
-Players whose rating is not official and who therefore are not ranked are listed in a separate table:
+I giocatori la cui valutazione non è ufficiale e che, quindi, non sono classificati sono elencati in una tabella separata:
 ![alt text](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/official_rating_off.jpg?81410)
 
 
 ### Leaders
-This block contains two tables:
-* the list of players who took the first line of the rankings by week,
-* overall leaders by number of weeks they hold the first plase.
+Questo blocco contiene due tabelle:
+* La lista dei giocatori che hanno ottenuto il primo posto nella classifica settimanale,
+* La lista dei giocatori che hanno detenuto il primo posto nella classifica più a lungo.
 
 
-### Rating/ranking history
-Complete record of all rating and ranking changes for a selected player:
+### Cronologia della valutazione/classifica
+Il resoconto di tutte le valutazioni e delle variazioni della posizione in classifica per un dato giocatore:
 ![alt text](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/player_rating_history_1549399068.jpg?13961)\
 ![alt text](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/player_ranking_history_1549399068.jpg?98891)
 
 
-## F.A.Q.
+## F.A.Q. - Domande fatte di frequente
 
-#### I have won the match. Why has my rating dropped?
+#### Ho vinto la partita. Perché la mia valutazione è scesa?
 
-Rating changes depend on the score (3-0 and 3-2 will have different effects), as well as on the players ratings prior to the game. 
+Le variazioni di punteggio dipendono dal punteggio (3-0 e 3-2 avranno effetti diversi), così come dalle valutazioni dei giocatori prima della partita.
 
-Imagine your rating is 100, and Ronnie O'Sullivan's rating is 3000, and you lose 9-10. Even though you lost the match, the system will conclude that probably you are not so bad and he is not so good, and adjust the ratings accordingly.
+Immagina che la tua valutazione sia 100, e la valutazione di Ronnie O'Sullivan è 3000, e perdi 9-10. Anche se hai perso la partita, il sistema concluderà che probabilmente non sei così male e lui non è così bravo, e aggiusta le valutazioni di conseguenza.
 
-You are only guaranteed to get rating points if you:
-* whitewash your opponent, or
-* win (with any score) against a stronger opponent.
+Avrete la garanzia di ottenere punti di valutazione solo se:
+* Battete il vostro avversario senza fargli vincere nemmeno un frame.
+*	Vincete contro un avversario più forte.
 
-Otherwise make sure that you don't lose too many frames to losers.
+Altrimenti assicuratevi di non perdere troppi frames contro gli avversari più deboli.
 
-#### When will I get an official rating?
+#### Quando riceverò una valutazione ufficiale?
 
-When reliability of your rating becomes positive.
-It usually takes about 20 frames to play with 5 different opponents, but precise number depends on the "quality" of you opponents, as well as some other factors.
-Keep playing and you get your official status soon.
+Quando l'affidabilità della tua valutazione diventa positiva. 
+Di solito ci vogliono circa 20 frames giocati contro 5 avversari diversi, ma il numero preciso dipende dalla "qualità" dei tuoi avversari, così come da altri fattori. 
+Continua a giocare e avrai presto il tuo status ufficiale.
 
-#### What happens to my rating if I don't play for some time?
+#### Cosa succede alla mia valutazione se non gioco per un po 'di tempo?
 
-Rating value itself will not change, but reliability will go down until eventually it hits 0 and then your rating becomes *unofficial*.
-In that case you will need to play some number of games to return your official status.
+Il valore di valutazione in sé non cambierà, ma l'affidabilità diminuirà fino a quando non raggiungerà lo 0 e quindi il tuo punteggio diverrà *non ufficiale*. 
+In tal caso dovrai giocare un certo numero di partite per riottenere il tuo stato ufficiale.
 
-#### Will I get additional rating points for winning a match / a deciding frame / a tournament?
+#### Riceverò punti aggiuntivi per la vittoria di una partita / un frame decisivo / un torneo?
 
-No, the system only cares about frames on a scoreboard and treats them all equally (apart from major/minor type).
-It does not distinguish deciding frames, tournament finals etc.
-This is because we believe that, no matter how important game you win, the outcome depends on your skills very much like any other frame, rather that your will to win (unfortunately, we cannot measure players psychological state yet).
-The only way to tell that one game is more important than another is to nominate it *major ranking*, not *minor ranking*, in which case rating changes will be simply twice bigger.
+No, al sistema interessano solo i frame che vengono trattati tutti allo stesso modo (a parte la tipologia principale / secondaria). Non fa distinzione tra frames decisivi, finali di torneo ecc. Questo perché crediamo che, indipendentemente da quanto sia importante la partita, il risultato dipende dalle tue abilità come qualsiasi altro frame, piuttosto che dalla tua volontà di vincere (sfortunatamente, non possiamo misurare lo stato psicologico dei giocatori, ancora). L'unico modo per dire che una partita è più importante di un'altra è nominarla classifica *principale (major ranking)* e *non (minor ranking)*. In questo caso le modifiche alla valutazione saranno, semplicemente, doppie.
 
-#### I regularly make big breaks and recently won a big tournament. Doesn't it mean I should be number one in ranking?
+#### Faccio regolarmente breaks molto elevati e, di recente, ho vinto un grande torneo. Non significa che dovrei essere il numero uno in classifica?
 
-No, it doesn't. No matter how big breaks you make or what other achievements you have, as long as you don't win consistently your rating may be low.
+No, non è così. Non importa quanto elevati siano i frames che fai o quali altri traguardi hai, finché non vinci in maniera costante il tuo punteggio potrebbe essere comunque basso.
 
-## Credits
-The rating system was inspired by *Gerardo Calzerano*, designed by *Anton Solomko* and implemented by *Anton Solomko* and *Luca Gherardi*.
+## Ringraziamenti
+Il sistema di valutazione è stato ispirato da *Gerardo Calzerano*, progettato da *Anton Solomko* e realizzato da *Anton Solomko* e *Luca Gherardi*. Ringrazio *Andrea Camplani* per la traduzione di queste informazioni.
