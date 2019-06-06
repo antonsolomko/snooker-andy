@@ -28,115 +28,102 @@ Maggiore è l'affidabilità, maggiore è il punteggio.
 (Affidabilità 1 significa che il sistema è sicuro al 100% della forza del giocatore, sebbene questo livello di confidenza non potrà mai esser raggiunto.) 
 L'affidabilità serve come indicatore per lo [stato ufficiale](#official) del giocatore.
 
-Both numbers (rating and reliability) are updated *daily* based on all [ranked games](#games) played the day before.
-The system estimates an expected outcome of each game and then simultaneously adjusts the ratings according to the difference between actual results and the expectations.
-Updated ratings appear the *next day* after the games took place.
-If player does not play ranked games, his rating value remains unchanged.
+Entrambi i numeri (punteggio ed affidabilità) sono aggiornati *giornalmente* in base alla totalità delle [partite classificate](#games) giocate nelle giornate precedenti. 
+Il sistema stima un risultato previsto per ogni partita e poi, simultaneamente, corregge il punteggio in base alla differenza tra il risultato ottenuto e la previsione. 
+I risultati aggiornati vengono mostrati il *giorno seguente*, dopo che le partite sono state giocate. 
+Se il giocatore non gioca partite classificate, il suo punteggio rimane invariato.
 
-Reliability changes every day (regardless of player activity) in two alternative ways:
-* Whenever ranked games are played, reliability *grows*.
-That is, the more you play, the more trustworthy your rating is.
-The increment depends on many factors.
-* When not playing, reliability *decreases* with the passage of time (by 0.008(3) every day), i.e. any period of inactivity results in increased uncertainty about player skills.
-If one stops playing completely, reliability drops to its minimum (-1) in at most 2 years.
+L'affidabilità cambia ogni giorno (indipendentemente dall'attività del giocatore) in due modi differenti:
+* Ogni volta che una partita classificata viene giocata, l'affidabilità *cresce*; il che significa che più giochi, più credibile è il tuo punteggio. L'incremento dipende da vari fattori.
+* Quando non si gioca, l'affidabilità *diminuisce* col passare del tempo (di 0.008(3) ogni giorno). Nei fatti ogni periodo di inattività determina una maggiore incertezza sulle abilità di un giocatore. 
+Se un giocatore smette completamente di giocare, l'affidabilità cala fino a raggiungere il punteggio minimo (-1) in circa 2 anni.
 
-For every ranked frame players obtain or lose rating points.
-The number of points depends on two factors:
-1. *Difference between opponents ratings* prior to the game. 
-This is the key factor: more "unexpected" outcomes result in bigger rating changes:
+Per ogni frame in una partita classificata, il giocatore ottiene o perde dei punti.
+Il numero di punti dipende da due fattori:
+1. *Differenza tra le valutazioni degli avversari* precedenti alla partita.
+Questo è il fattore chiave: più il risultato ottenuto è inaspettato dal sistema, più il punteggio varia:
 
-| Player A rating | Player B rating | Frame winner       | Resulting rating change                |
+| Punteggio giocatore A | Punteggio giocatore B | Vincitore frame       | Variazione del punteggio                |
 | :-------------: | :-------------: | :----------------: | :------------------------------------: |
-| High            | Low             | **A** (expected)   | A gets few points, B loses few points  |
-| High            | Low             | **B** (unexpected) | A loses many point, B gets many points |
+| Alto            | Basso             | **A** (previsto)   | A riceve pochi punti, B perde pochi punti  |
+| Alto            | Basso             | **B** (non previsto) | A perde molti punti, B riceve molti punti |
 
-2. *Reliability*.
-If reliability is high, rating changes will be small (because the system is already confident in player skills, one frame will not give enough evidence for changing rating much).
-On the contrary, low reliability leads to high rating volatility (information obtained from every frame will be perceptible compared to what the system already knows, thus it will try a bolder rating tuning).
-Difference in the opponents reliabilities also plays some role.
+2. *Affidabilità*.
+Se l'affidabilità è elevata, il cambiamento nel punteggio sarà di poco conto (dato che il sistema è già confidente nelle abilità del giocatore, un frame non fornirà una dimostrazione abbastanza valida per modificare fortemente il punteggio). 
+Al contrario, una bassa affidabilità comporterà una possibilità di variazione del punteggio elevata (Le informazioni ottenute da ogni frame saranno percepibili rispetto a quelle che il sistema già conosce, quindi proverà ad una regolazione più audace del punteggio). 
+La differenza nell'affidabilità tra i vari giocatori ha la sua importanza.
 
-### Key features
+### Caratteristiche chiave
 
-* Rating changes depend on the *score*, not on a match result.
-Winning a match 3-0 or 3-2 makes an essential difference.
+* Il cambiamento del punteggio deriva dai *punti di gioco*, non dal risultato della partita. 
+Vincere un incontro 3-0 o 3-2 è assolutamente ininfluente.
 
-* Victory over a high rated player costs more than victory over a low rated player.
-Similarly, loss to a low rated player costs more than loss to a high rated player.
+* Vincere contro un giocatore con un punteggio elevato permette di ottenere molti più punti, inversamente, vincere contro un giocatore con un punteggio basso vi farà ottenere pochi punti.
 
-* A low rated player may *earn* rating points, even when losing a match to a stronger opponent, if he manages to win few frames (the winner will lose rating points in that case).
-For example, playing with a stronger opponent, one may lose -5 points for each frame lost, and gain +23 for a frame won.
-Then 1-3 loss in a match will still give the loser additional 23 - 3*5 = +8 rating points.
+* Un giocatore con basso punteggio potrebbe *ottenere* dei punti persino quando perde un incontro contro un giocatore più forte se riesce a vincere qualche frame (il vincitore perderà qualche punto, in questo caso). 
+Per esempio, giocando contro uno sfidante forte, un giocatore potrebbe perdere -5 punti per ogni frame perso e guadagnarne +23 per un frame vinto; quindi una partita persa 1-3 darà al giocatore sconfitto 23 – 3*5 = +8 punti.
 
-* Rating changes for two opponents are *not symmetric* in general (but are always opposite).
-They depend on opponents reliabilities: ratings with lower reliability vary more.
+* I cambiamenti di punteggio dei giocatori *non sono simmetrici* in genere (ma sempre opposte). Dipendono dall'affidabilità degli sfidanti: i punteggi con affidabilità bassa variano di più.
 
-* Rating increments are *not additive*: number of points obtained for each frame in a series of games played the same day is slightly smaller than the number of points for a single frame alone.
-Furthermore, when playing against several opponents the same day, the resulting rating change is composite of individual frames, but not reduced to their arithmetic sum.
+* Gli incrementi dei punteggi *non sono aggiuntivi*: i punti ottenuti nei vari frames in una serie di partite giocata lo stesso giorno è leggermente inferiore al numero di punti ottenuti per un frame singolo. 
+Inoltre, quando si gioca contro vari giocatori nello stesso giorno, la variazione di punteggio è composta dai singoli frames, ma non ridotta alla loro somma aritmetica.
 
-* The system has *weak memory*: although all past games have some influence on the ratings, current ratings depend heavily on recent games and only slightly on games played long time ago.
-(Assuming that players play regularly, of course. Ratings of players who stopped playing are frozen.)
+* Il sistema ha la *memoria corta*. Sebbene tutte le partite passate abbiano una certa influenza sul sistema di punteggio, il punteggio attuale dipende fortemente dalle partite più recenti e solo in parte dalle partite giocate tempo prima. 
+(Dando per scontato che i giocatori giochino regolarmente, naturalmente. I giocatori che hanno smesso di giocare vengono congelati.)
 
 
-### <a name="games"></a>Types of games
+### <a name="games"></a>Tipologie di gioco
 
-There are three types of games, depending on their importance and influence on ratings:
+Ci sono tre tipi di gioco, catalogati in base alla loro importanza ed influenza sul sistema di calcolo del punteggio:
 
-* **Major ranking** games have full impact on ratings. 
-It is assumed that these games are important in some sense and hence both opponents do their best to win every frame. 
-Most tournaments are major ranking.
+* **Major (principale) ranking** hanno un impatto pieno sul sistema di calcolo del punteggio. 
+Si da per scontato che questa tipologia di partite sia considerata importante per entrambi gli sfidanti che faranno del loro meglio per vincere ogni frame. La maggior parte dei tornei sono partite classificate principali.
 
-* **Minor ranking** games have twice smaller effect on ratings compared to major ranking games.
-Any rating changes caused by minor ranking games are "amortized" or "discounted" by half.
-In other words, winning two *minor* frames have the same effect as winning one *major* frame.
-Friendly matches as well as some small tournaments are minor ranking events. 
-Under normal circumstances, it is recommended to give preference to this type of games, as long as players try to win.
+* **Minor (secondario) ranking**: hanno un impatto parziale messe a confronto con le partite classificate principali. 
+Qualsiasi variazione causata da una partita classificata secondaria è “ammortizzata” o “scontata” di metà del suo valore.
+In altre parole vincere due frames *secondario* è come vincere un frame *principale*. 
+Le sfide amichevoli come anche i piccoli tornei sono classificate come eventi secondari. 
+Sotto normali circostanze è consigliato giocare questa tipologia di partite fino a quando i giocatori cercheranno di vincere.
 
-* **Non ranking** games do not affect ratings at all. 
-This type should be only used if players do not try to win or play not as they would normally do, so that the outcome does not adequately represent their real abilities.
-
-
-### Guest players
-
-Players that are not affiliated with an academy ("guests") are not ranked.
-Games with such players are ignored by the rating system.
+* **Non (nessun) ranking**: non variano il punteggio in alcun modo. 
+Questa tipologia di partite dovrebbe esser giocata quando i giocatori non giocano per vincere oppure quando i giocatori non giocano come farebbero normalmente e quindi non ottengano il risultato che avrebbe rappresentato le loro abilità reali di gioco.
 
 
-### Frequency restriction
+### Ospiti
 
-If two players meet too often (more than *once in 2 weeks*), their minor ranking games have smaller impact on ratings.
-Namely, these games are counted with an additional "amortizing factor" equal to the inverse number of days they played together within the past 14 days.
-
-For example, if two friends play with each other 3 days in a row, the games of the first day will be counted as normal minor ranking games.
-The games played the second day will have twice smaller impact on ratings (coefficient 1/2, or 1/4 compared to a major ranking game).
-Any games played between these two during the third day will be counted with coefficient 1/3, and so on.
-If they meet again in two weeks or later, no frequency penalty will be imposed any more and ranked game will be counted as usual.
-
-All major ranking games have full impact on ratings, no matter how often they are played.
+I giocatori che non sono affiliati ad un'accademia (“ospiti”) non sono classificati. Ogni incontro che vede tra gli sfidanti un ospite è ignorato dal sistema.
 
 
-### <a name="official"></a>Official status
+### Restrizione di frequenza
 
-Player's rating is **official** if the reliability is positive, and **unofficial** otherwise.
+Se due giocatori si incontrano troppo spesso (più di una volta in 2 settimane), le loro partite classificate secondarie (minor ranking) hanno un impatto minore sulla variazione del punteggio. In pratica a queste partite è attribuito un ulteriore "ammortamento" uguale al numero inverso di giorni in cui hanno giocato insieme negli ultimi 14 giorni.
 
-This means that new players initially get unofficial ratings (default reliability is -1), and obtain official status only after they complete some number of ranked games (typically around 20 frames played with 5 different opponents, enough for the rating to stabilize near its real value).
+Ad esempio, se due amici si sfidano per 3 giorni di fila, le sfide del primo giorno verranno contate come partite classificate secondarie normali. Le partite giocate il secondo giorno subiranno un impatto che equivale alla metà dell’impatto normale sui punteggi (coefficiente 1/2 o 1/4 rispetto a una partita classificata principale). Qualsiasi partita giocata tra questi due durante il terzo giorno verrà conteggiata con il coefficiente 1/3 e così via. Se si incontrano di nuovo tra due settimane o più tardi, non verrà più imposta alcuna penalità di frequenza e il gioco classificato verrà conteggiato come al solito.
 
-Since reliability of inactive players constantly decreases with the passage of time, ratings of those players, who do not play for a while, sooner or later (but no more than in 120 days) become *unofficial*.
-If that happens, they need to play certain number of games to confirm their level, before they return their official status.
-
-### Club ranking
-
-Club official ranking is updated once a week and is based on Monday ratings.
-Players whose rating is unofficial stay unranked.
+Tutti i frame giocati in partite principali (major ranking) non subiscono questo ammortamento e hanno un impatto completo sui rating, indipendentemente dalla frequenza con i quali vengono giocati.
 
 
-## Probabilistic interpretation
+### <a name="official"></a>Stato ufficiale
 
-Our model is stochastic: from games results it tries to estimate means and variances of normally distributed players skills.
-As a byproduct, it allows to predict outcomes of future games.
-Knowing the ratings of two opponents, one can estimate the *probability* for each of them to win a single frame, and hence a match.
-For example, for two players with ratings 1700 and 1650 (provided they are equally reliable), the stronger one would win a frame with probability 62% and the distribution of possible outcomes of a match "best of 5 frames" would be:
+La valutazione del giocatore è **ufficiale** se l'affidabilità è positiva e **non ufficiale** altrimenti.
 
-Score | Probability
+Ciò significa che i nuovi giocatori ottengono inizialmente valutazioni non ufficiali (l'affidabilità predefinita è -1) e ottengono lo status ufficiale solo dopo aver completato un certo numero di partite classificate (in genere circa 20 frames giocati contro 5 avversari diversi, sufficienti perché il punteggio si stabilizzi vicino al valore reale).
+
+Poiché l'affidabilità dei giocatori inattivi diminuisce costantemente con il passare del tempo, i punteggi di quei giocatori, che non giocano per un po', prima o poi (ma non più di 120 giorni) diventano *non ufficiali*. 
+Se ciò accade, devono giocare un certo numero di partite per confermare il loro livello, prima che ritornino al loro stato ufficiale.
+
+### Classifica del club
+
+La classifica ufficiale del club viene aggiornata una volta alla settimana e si basa sulle valutazioni del lunedì. 
+I giocatori la cui valutazione non è ufficiale rimangono non classificati.
+
+
+## Interpretazione probabilistica
+
+Il nostro modello è stocastico: dai risultati delle varie partite cerca di stimare entità e varianze delle abilità dei giocatori distribuite normalmente. In secondo luogo consente di prevedere i risultati delle sfide future. 
+Conoscendo le valutazioni di due avversari, si può stimare la *probabilità* per ognuno di loro di vincere un singolo frame, e di conseguenza una partita. Ad esempio, per due giocatori con punteggi 1700 e 1650 (a condizione che siano ugualmente affidabili), il più forte vincerebbe un frame con probabilità 62% e la distribuzione dei possibili risultati di una partita "al meglio dei 5 frame" sarebbe:
+
+Punteggio | Probabilità
 :----:|:-----------:
  3-0  | 18%
  3-1  | 24%
@@ -146,7 +133,7 @@ Score | Probability
  0-3  | 8%
 
 
-## Examples
+## Esempi
 
 #### Example 1.
 **A.B.** is a new player playing his first ever game. 
