@@ -1,34 +1,32 @@
-# Andy Rating System
+# Sistema di valutazione Andy
 
-## Overview
+## Panoramica
 
-The Andy rating system was designed for the [AndyScorer](http://snooker.andyscorer.org) web service to evaluate players skills in the game of [snooker](en.wikipedia.org/wiki/Snooker). 
-It is based on [Glicko](http://www.glicko.net/glicko.html) rating system with minor modifications and views players strength as their ability to win individual frames.
+Il sistema di valutazione Andy è stato progettato per [AndyScorer](http://snooker.andyscorer.org) per valutare le abilità di un giocatore nel gioco dello [snooker](https://it.wikipedia.org/wiki/Snooker). Questo sistema è basato sul sistema di valutazione [Glicko](http://www.glicko.net/glicko.html) con una serie di modifiche minori e mostra la forza dei giocatori come l'abilità di vincere individualmente i frames.
 
-In our model, like in Glicko, player skills are assumed to be [normally distributed random variables](https://en.wikipedia.org/wiki/Normal_distribution).
-Parameters of the distributions (mean and variance) are reestimated periodically based on games outcomes.
+Nel nostro modello, come in Glicko, le abilità dei giocatori si presume che siano [variabili casuali normalmente distribuite](https://it.wikipedia.org/wiki/Distribuzione_normale). I parametri di distribuzione (media e varianza) sono nuovamente valutate periodicamente, in base ai risultati di gioco.
 
-The model relies on the following assumptions:
-* players try to win every frame,
-* frames outcomes are independent of each other.
+Il modello si basa sui seguenti presupposti:
+* i giocatori cercano di vincere ogni frame,
+* i frames siano indipendenti uno dall'altro.
 
-Only *count of frames* (won or lost) determines the resulting ratings.
-Any other factors, such as match outcome, points scored, breaks made, tournament stage etc, are not taken into account.
+Il solo *conteggio dei frames* (vinti o persi) determina il punteggio di valutazione.
+Ogni altro fattore, come per esempio il risultato del match, i punti totalizzati, i breaks raggiunti, le fasi del torneo, non sono presi in considerazione.
 
-## Description
+## Descrizione
 
-To each player two numbers are assigned:
+Per ogni giocatore sono assegnati due numeri:
 
-* **Rating**.
-Represents a player's strength (ability to win frames).
-Initial rating for a new player is 1500.
+* **Punteggio**.
+Rappresenta la forza del giocatore (abilità di vincere frames). 
+Il valore iniziale di forza del giocatore è di 1500 punti.
 
-* **Reliability** of a player's rating (rescaled version of variance).
-An auxiliary parameter that represents the system's confidence in player rating estimate.
-Reliability varies from -1 (default for new players) to 1. 
-The higher the reliability, the more accurate the rating is.
-(Reliability 1 would mean that the system is 100% sure in player's strength, although this level of confidence can never be achieved.)
-Reliability serves as an indicator for player [official status](#official).
+* **Affidabilità** del punteggio di valutazione del giocatore (versione rigraduata della varianza). 
+Un parametro ausiliario che rappresenta la confidenza del sistema con il punteggio del giocatore stabilito. 
+L'affidabilità varia da -1 (Standard per i nuovi giocatori) a 1. 
+Maggiore è l'affidabilità, maggiore è il punteggio. 
+(Affidabilità 1 significa che il sistema è sicuro al 100% della forza del giocatore, sebbene questo livello di confidenza non potrà mai esser raggiunto.) 
+L'affidabilità serve come indicatore per lo [stato ufficiale](#official) del giocatore.
 
 Both numbers (rating and reliability) are updated *daily* based on all [ranked games](#games) played the day before.
 The system estimates an expected outcome of each game and then simultaneously adjusts the ratings according to the difference between actual results and the expectations.
