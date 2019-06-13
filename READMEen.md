@@ -192,7 +192,7 @@ Set the corresponding flag to see all ratings including unofficial ones:
 
 
 ### Official ranking
-![alt text](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/official_rating.jpg?4929)\
+![](img/Ranking.jpg)\
 Official club ranking table (based on Monday ratings of the selected week, current week by default) contains the columns:
 * *Position* (rank).
 * *Position change* since the last week.
@@ -200,7 +200,7 @@ Official club ranking table (based on Monday ratings of the selected week, curre
 * *Rating*.
 
 Players whose rating is not official and who therefore are not ranked are listed in a separate table:
-![alt text](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/official_rating_off.jpg?81410)
+![](img/Ranking_unof.jpg)
 
 
 ### Leaders
@@ -211,8 +211,8 @@ This block contains two tables:
 
 ### Rating/ranking history
 Complete record of all rating and ranking changes for a selected player:
-![alt text](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/player_rating_history_1549399068.jpg?13961)\
-![alt text](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/player_ranking_history_1549399068.jpg?98891)
+![](img/Ranking_history.jpg)\
+![](img/Rating_history.jpg)
 
 
 ## F.A.Q.
