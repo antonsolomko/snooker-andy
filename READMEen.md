@@ -177,7 +177,7 @@ Chronological data are typically ordered from recent to past.
 
 
 ### Ratings
-![](img/ratings.jpg)\
+![](img/Ratings.jpg)\
 This table shows ratings for a selected day (today by default) with the following columns:
 * *Position*. Please note that one position is never shared by two players, even if rounded ratings sometimes coincide. The real (not rounded) values are almost surely different from each other.
 * *Player name*.
@@ -188,7 +188,7 @@ This table shows ratings for a selected day (today by default) with the followin
 
 Only official ratings are shown by default.
 Set the corresponding flag to see all ratings including unofficial ones:
-![](img/ratings_all.jpg)
+![](img/Ratings_all.jpg)
 
 
 ### Official ranking
