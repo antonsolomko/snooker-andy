@@ -136,16 +136,16 @@ Players whose rating is unofficial stay unranked.
 Our model is stochastic: from games results it tries to estimate means and variances of normally distributed players skills.
 As a byproduct, it allows to predict outcomes of future games.
 Knowing the ratings of two opponents, one can estimate the *probability* for each of them to win a single frame, and hence a match.
-For example, for two players with ratings 1700 and 1650 (provided they are equally reliable), the stronger one would win a frame with probability 62% and the distribution of possible outcomes of a match "best of 5 frames" would be:
+For example, for two players with ratings 1780 and 1690 (provided they are equally reliable), the stronger one would win a frame with probability 62% and the distribution of possible outcomes of a match "best of 5 frames" would be:
 
 Score | Probability
 :----:|:-----------:
- 3-0  | 18%
- 3-1  | 24%
- 3-2  | 20%
- 2-3  | 16%
- 1-3  | 14%
- 0-3  | 8%
+ 3-0  | 24%
+ 3-1  | 27%
+ 3-2  | 21%
+ 2-3  | 13%
+ 1-3  | 10%
+ 0-3  | 5%
 
 
 ## Examples
