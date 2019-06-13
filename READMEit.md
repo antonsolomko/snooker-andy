@@ -173,7 +173,7 @@ Questa tabella mostra le valutazioni per un giorno selezionato (di default la da
 
 Solo le valutazioni ufficiali sono mostrate in maniera predefinita. 
 Nel caso in cui si vogliano visualizzare anche le valutazioni non ufficiali si deve spuntare la bandiera corrispondente:
-![](img/Ratings_all.jpg)\
+![](img/Ratings_all.jpg)
 
 
 ### Classifica ufficiale
