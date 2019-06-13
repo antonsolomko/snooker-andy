@@ -177,7 +177,7 @@ Chronological data are typically ordered from recent to past.
 
 
 ### Ratings
-![alt text](http://server.andyscorer.org/server/service/tuscany/__cfg/output/generic_table/snk_rating_1549395708.jpg?79537)\
+![](img/ratings.jpg)\
 This table shows ratings for a selected day (today by default) with the following columns:
 * *Position*. Please note that one position is never shared by two players, even if rounded ratings sometimes coincide. The real (not rounded) values are almost surely different from each other.
 * *Player name*.
@@ -188,7 +188,7 @@ This table shows ratings for a selected day (today by default) with the followin
 
 Only official ratings are shown by default.
 Set the corresponding flag to see all ratings including unofficial ones:
-![alt text](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/snk_rating_1549395796.jpg?38962)
+![](img/ratings_all.jpg)
 
 
 ### Official ranking
