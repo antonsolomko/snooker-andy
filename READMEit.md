@@ -135,7 +135,7 @@ Punteggio | Probabilità
 
 ## Esempi
 
-#### Example 1.
+#### Esempio 1.
 **A.B.** è un nuovo giocatore che gioca la sua prima partita in assoluto. 
 Il suo punteggio iniziale è 1500 e il sistema non sa ancora nulla dei suoi veri punti di forza (affidabilità -1). 
 Vince una partita secondaria (minor ranking) 4-1 contro **D.M.**, la cui valutazione di 1759 punti è più affidabile (affidabilità 0,35). Come rivela il rapporto del giorno dopo, **A.B.** guadagna +413 punti di valutazione, mentre **D.M.** ne perde solo -61. 
@@ -145,7 +145,7 @@ Le nuove affidabilità dei due giocatori sono rispettivamente di -0,3 (non uffic
 
 ![](img/Example1.jpg)
 
-#### Example 2.
+#### Esempio 2.
 La valutazione di **A.S.** è 1858 (affidabilità 0,48) mentre la valutazione di **P.DM.** è 1684 ed più affidabile (0,7). 
 **A.S.** vince una partita principale (major ranking) 3-2 (l'unica partita che entrambi i giocatori hanno fatto in quella giornata). 
 Il nuovo rating di **A.S.** è 1830 (-28), mentre quello di **P.DM.** è 1701 (+17). 
