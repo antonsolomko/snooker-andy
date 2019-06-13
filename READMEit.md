@@ -162,7 +162,7 @@ I dati cronologici vengono generalmente ordinati dal recente al passato.
 
 
 ### Le valutazioni
-![alt text](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/snk_rating_1549395708.jpg?79537)\
+![](img/Ratings.jpg)\
 Questa tabella mostra le valutazioni per un giorno selezionato (di default la data impostata è quella odierna) con le seguenti colonne:
 * *Posizione*. Si tenga presente che una posizione non viene mai condivisa da due giocatori, anche se talvolta le valutazioni arrotondate coincidono. I valori reali (non arrotondati) sono quasi sicuramente diversi l'uno dall'altro.
 * *Nome* del giocatore.
@@ -173,11 +173,11 @@ Questa tabella mostra le valutazioni per un giorno selezionato (di default la da
 
 Solo le valutazioni ufficiali sono mostrate in maniera predefinita. 
 Nel caso in cui si vogliano visualizzare anche le valutazioni non ufficiali si deve spuntare la bandiera corrispondente:
-![alt text](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/snk_rating_1549395796.jpg?38962)
+![](img/Ratings_all.jpg)\
 
 
 ### Classifica ufficiale
-![alt text](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/official_rating.jpg?4929)\
+![](img/Ranking.jpg)\
 La classifica ufficiale del club (in base alle valutazioni del lunedì della settimana selezionata, la settimana visualizzata di default è quella corrente) contiene le seguenti colonne:
 * *Posizione* (classifica).
 * *Cambio di posizione* in classifica dall'ultima settimana.
@@ -185,7 +185,7 @@ La classifica ufficiale del club (in base alle valutazioni del lunedì della set
 * *Punteggio*.
 
 I giocatori la cui valutazione non è ufficiale e che, quindi, non sono classificati sono elencati in una tabella separata:
-![alt text](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/official_rating_off.jpg?81410)
+![](img/Ranking_unof.jpg)
 
 
 ### Leaders
@@ -196,8 +196,8 @@ Questo blocco contiene due tabelle:
 
 ### Cronologia della valutazione/classifica
 Il resoconto di tutte le valutazioni e delle variazioni della posizione in classifica per un dato giocatore:
-![alt text](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/player_rating_history_1549399068.jpg?13961)\
-![alt text](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/player_ranking_history_1549399068.jpg?98891)
+![](img/Ranking_history.jpg)\
+![](img/Rating_history.jpg)
 
 
 ## F.A.Q. - Domande fatte di frequente
