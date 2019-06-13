@@ -121,16 +121,16 @@ I giocatori la cui valutazione non è ufficiale rimangono non classificati.
 ## Interpretazione probabilistica
 
 Il nostro modello è stocastico: dai risultati delle varie partite cerca di stimare entità e varianze delle abilità dei giocatori distribuite normalmente. In secondo luogo consente di prevedere i risultati delle sfide future. 
-Conoscendo le valutazioni di due avversari, si può stimare la *probabilità* per ognuno di loro di vincere un singolo frame, e di conseguenza una partita. Ad esempio, per due giocatori con punteggi 1700 e 1650 (a condizione che siano ugualmente affidabili), il più forte vincerebbe un frame con probabilità 62% e la distribuzione dei possibili risultati di una partita "al meglio dei 5 frame" sarebbe:
+Conoscendo le valutazioni di due avversari, si può stimare la *probabilità* per ognuno di loro di vincere un singolo frame, e di conseguenza una partita. Ad esempio, per due giocatori con punteggi 1780 e 1690 (a condizione che siano ugualmente affidabili), il più forte vincerebbe un frame con probabilità 62% e la distribuzione dei possibili risultati di una partita "al meglio dei 5 frame" sarebbe:
 
 Punteggio | Probabilità
-:----:|:-----------:
- 3-0  | 18%
- 3-1  | 24%
- 3-2  | 20%
- 2-3  | 16%
- 1-3  | 14%
- 0-3  | 8%
+:--------:|:-----------:
+ 3-0      | 24%
+ 3-1      | 27%
+ 3-2      | 21%
+ 2-3      | 13%
+ 1-3      | 10%
+ 0-3      | 5%
 
 
 ## Esempi
