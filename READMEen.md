@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Andy rating system was designed for the [AndyScorer](http://snooker.andyscorer.org) web service to evaluate players skills in the game of [snooker](en.wikipedia.org/wiki/Snooker). 
+The Andy rating system was designed for the [AndyScorer](http://server.andyscorer.org/server/service/) web service to evaluate players skills in the game of [snooker](en.wikipedia.org/wiki/Snooker). 
 It is based on [Glicko](http://www.glicko.net/glicko.html) rating system with minor modifications and views players strength as their ability to win individual frames.
 
 In our model, like in Glicko, player skills are assumed to be [normally distributed random variables](https://en.wikipedia.org/wiki/Normal_distribution).
@@ -172,12 +172,12 @@ If it was a *minor* ranking game instead, the players would get twice less, +9 a
 
 ## Web reports
 
-[AndyScorer](http://snooker.andyscorer.org) website provides various rating reports.
+[AndyScorer](http://server.andyscorer.org/server/service/) website provides various rating reports.
 Chronological data are typically ordered from recent to past.
 
 
 ### Ratings
-![alt text](http://snooker.andyscorer.org/snooker/tuscany/__cfg/output/generic_table/snk_rating_1549395708.jpg?79537)\
+![alt text](http://server.andyscorer.org/server/service/tuscany/__cfg/output/generic_table/snk_rating_1549395708.jpg?79537)\
 This table shows ratings for a selected day (today by default) with the following columns:
 * *Position*. Please note that one position is never shared by two players, even if rounded ratings sometimes coincide. The real (not rounded) values are almost surely different from each other.
 * *Player name*.
