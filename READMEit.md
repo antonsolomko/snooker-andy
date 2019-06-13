@@ -234,4 +234,4 @@ No, al sistema interessano solo i frame che vengono trattati tutti allo stesso m
 No, non è così. Non importa quanto elevati siano i frames che fai o quali altri traguardi hai, finché non vinci in maniera costante il tuo punteggio potrebbe essere comunque basso.
 
 ## Ringraziamenti
-Il sistema di valutazione è stato ispirato da *Gerardo Calzerano*, progettato da *Anton Solomko* e realizzato da *Anton Solomko* e *Luca Gherardi*. Ringrazio *Andrea Camplani* per la traduzione di queste informazioni.
+Il sistema di valutazione è stato ispirato da *Gerardo Calzerano*, progettato da *Anton Solomko* e realizzato da *Anton Solomko* e *Luca Gherardi*. Ringraziamo *Andrea Camplani* per la traduzione di queste informazioni.
