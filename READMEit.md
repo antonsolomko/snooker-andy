@@ -2,7 +2,7 @@
 
 ## Panoramica
 
-Il sistema di valutazione Andy è stato progettato per [AndyScorer](http://snooker.andyscorer.org) per valutare le abilità di un giocatore nel gioco dello [snooker](https://it.wikipedia.org/wiki/Snooker). Questo sistema è basato sul sistema di valutazione [Glicko](http://www.glicko.net/glicko.html) con una serie di modifiche minori e mostra la forza dei giocatori come l'abilità di vincere individualmente i frames.
+Il sistema di valutazione Andy è stato progettato per [AndyScorer](http://server.andyscorer.org/server/service/) per valutare le abilità di un giocatore nel gioco dello [snooker](https://it.wikipedia.org/wiki/Snooker). Questo sistema è basato sul sistema di valutazione [Glicko](http://www.glicko.net/glicko.html) con una serie di modifiche minori e mostra la forza dei giocatori come l'abilità di vincere individualmente i frames.
 
 Nel nostro modello, come in Glicko, le abilità dei giocatori si presume che siano [variabili casuali normalmente distribuite](https://it.wikipedia.org/wiki/Distribuzione_normale). I parametri di distribuzione (media e varianza) sono nuovamente valutate periodicamente, in base ai risultati di gioco.
 
@@ -157,7 +157,7 @@ Se invece si fosse trattato di una partita classificata secondaria, i giocatori 
 
 ## Web Reports
 
-L’applicazione web di [AndyScorer](http://snooker.andyscorer.org) fornisce vari report di valutazione. 
+L’applicazione web di [AndyScorer](http://server.andyscorer.org/server/service/) fornisce vari report di valutazione. 
 I dati cronologici vengono generalmente ordinati dal recente al passato.
 
 
